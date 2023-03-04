@@ -17,10 +17,10 @@
     光标返回--alt + b
     光标前进--alt + n
 
-    向左滚动--shift+j
-    向右滚动--shift+l
-    向上滚动--shift+i
-    向下滚动--shift+k
+    向左滚动--alt + shift + j
+    向右滚动--alt + shift + l
+    向上滚动--alt + shift + i
+    向下滚动--alt + shift + k
 
     左右切换编辑文件--Alt+左右箭头
 
