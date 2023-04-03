@@ -14,7 +14,7 @@ package day01_javaSummary;
  *  文档注释内容可以被JDK提供的工具javadoc所解析，生成一套以网页文件形式体现的该程序的说明文件。
  *  解析命令：javadoc -d b_Comment_doc -encoding utf-8 -author -version b_Comment.java
  */
-public class b_Comment {
+public class B_Comment {
     /**
      * 对main方法进行注释说明
      * @param args args名称可以修改。

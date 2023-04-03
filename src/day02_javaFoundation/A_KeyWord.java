@@ -29,7 +29,7 @@ package day02_javaFoundation;
  *          const    goto
  *
  */
-public class a_KeyWord {
+public class A_KeyWord {
     public static void main(String[] args) {
         System.out.println("this is key word description document.");
     }

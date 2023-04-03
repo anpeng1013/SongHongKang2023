@@ -18,7 +18,7 @@ package day01_javaSummary;
  *                      ① 一个源文件中可以声明多个类，但最多只能有一个类使用public进行声明。
  *                         且要求声明为public的类的名称要与源文件名相同。
  */
-public class a_HelloWorld {
+public class A_HelloWorld {
     public static void main(String[] args) {
         System.out.println("hello world");
     }
