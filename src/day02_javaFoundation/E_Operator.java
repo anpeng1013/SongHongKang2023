@@ -29,7 +29,7 @@ package day02_javaFoundation;
  *          关系运算符（6个）：>、 >=、 <、 <=、 ==、 !=、instanceof
  *                关系运算符的结果都是 boolean 型，也就是要么是 true，要么是 false。
  *                > < >= <= ：只适用于基本数据类型（除 boolean 类型之外）   == != ：适用于基本数据类型和引用数据类型
- *                instanceof：检查是否是类的对象。
+ *                instanceof：检查是否为类的对象。
  *
  *          逻辑运算符（6个）：&、 |、 ^、 !、 &&、 ||
  *                逻辑运算符，操作的都是 boolean 类型的变量或常量，而且运算得结果也是 boolean 类型的值。
@@ -50,6 +50,14 @@ package day02_javaFoundation;
  *                      建议：开发中，推荐使用 ||
  *
  *          位运算符（7个）：&、 |、 ^、 ~、 <<、 >>、 >>>
+ *                <<：左移，右边空位补0，被移除的高位直接丢弃，移位结果可正可负。
+ *                >>：右移，最高位，移1补1，移0补0。右移一位相当于除2，如果不能整除则向下取整。
+ *                >>>：右移，最高位无论是0还是1，空缺位都有0补。
+ *                  &：各二进制位进行逻辑与
+ *                  |：各二进制位进行逻辑或
+ *                  ~：二进制位按补码各位取反
+ *                  ^：各二进制位进行逻辑异或。
+ *
  *          条件运算符（1个）：(条件表达式)?结果 1:结果 2
  *          Lambda 运算符（1个）：->
  *
@@ -61,12 +69,20 @@ package day02_javaFoundation;
  */
 public class E_Operator {
     public static void main(String[] args) {
-        testArithmetic();
-        testSetValue();
-
+        testArithmeticOperator();
+        testSetValueOperator();
+        testMoveBitOperator();
+        testConditionOperator();
     }
 
-    static void testArithmetic(){
+    private static void testConditionOperator() {
+        String[] array = {"anpeng", "huli" , "love"};
+        for (int i = 0; i < 2; i++) {
+            System.out.println(array[i].equals("huli") ? "find it" : array[i]);
+        }
+    }
+
+    static void testArithmeticOperator(){
         System.out.println("testArithmetic-------------------");
         int a = 3;
         int b = 4;
@@ -87,10 +103,10 @@ public class E_Operator {
 
     }
 
-    static void testSetValue(){
+    static void testSetValueOperator(){
         System.out.println("testSetValue----------------");
-        long l1 = 10; //自动类型转换
-        byte bb1 = (byte)l1; //强制类型转换
+        long l1 = 10; //自动类型提升
+        byte bb1 = (byte)l1; //强制类型缩减
         System.out.println(l1 + " " + bb1);
 
         //连续赋值的测试
@@ -104,7 +120,7 @@ public class E_Operator {
         System.out.println(a2 + " " + b2);
 
         //练习：开发中，如何实现一个变量+2 的操作呢？
-        // += 的操作不会改变变量本身的数据类型。其他拓展的运算符也如此。
+        // += 的操作不会改变变量本身的数据类型。其他拓展运算符也如此。
         //写法 1：推荐
         short s1 = 10;
         s1 += 2; //编译通过，因为在得到 int 类型的结果后， JVM 自动完成一步强制类型转换，将 int 类型强转成 short
@@ -116,4 +132,9 @@ public class E_Operator {
         System.out.println(s2);
     }
 
+    static void testMoveBitOperator(){
+        byte b = -9;
+        System.out.println(b << 4);  //-144 char,byte,short在运算时，会自动按照int类型处理
+
+    }
 }

@@ -13,11 +13,6 @@ package day02_javaFoundation;
  *   4.变量只有在其作用域内才有效。出了作用域，变量不可以再被调用。
  *   5.同一个作用域内，不能定义重名的变量。
  *
- * 为什么标识符的声明规则里要求不能以数字开头？
- *    如果允许数字开头，则如下的声明，编译即可以通过：
- *    int 123L = 12;
- *    进而，如下的声明中 l 的值到底是123？还是变量 123L 对应的取值12呢？出现歧义了。
- *    long l = 123L;
  */
 public class C_Variable {
     public static void main(String[] args) {

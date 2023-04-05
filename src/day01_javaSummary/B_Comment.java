@@ -12,7 +12,7 @@ package day01_javaSummary;
  * 3.单行注释和多行注释的内容不参与编译，多行注释不能嵌套使用。
  * 4.文档注释：
  *  文档注释内容可以被JDK提供的工具javadoc所解析，生成一套以网页文件形式体现的该程序的说明文件。
- *  解析命令：javadoc -d b_Comment_doc -encoding utf-8 -author -version b_Comment.java
+ *  解析命令：javadoc -d B_Comment_doc -encoding utf-8 -author -version b_Comment.java
  */
 public class B_Comment {
     /**

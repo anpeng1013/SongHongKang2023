@@ -13,9 +13,9 @@ import static util.CustomUtil.getType;
  *              byte: 1字节、short2字节、int：4字节、long：8字节
  *              定义long类型的变量，赋值时需要以l或L作为后缀，java的整型常量默认为int型。
  *          浮点类型：
- *              float：4字节，尾数可以精确到7位有效数字。定义float类型的变量，赋值时需要以f或L作为后缀。
+ *              float：4字节，尾数可以精确到7位有效数字。定义float类型的变量，赋值时需要以f或F作为后缀。
  *              double：8字节：精度是float的两倍。java的浮点型常量默认为double型。
- *              注意：并不是所有的小数都能可以精确的用二进制浮点数表示。二进制浮点数不能精确的表示 0.1、 0.01、 0.001 这样 10 的负次幂
+ *              注意：并不是所有的小数都能可以精确的用二进制浮点数表示。例如：二进制浮点数不能精确的表示 0.1、 0.01、 0.001 这样 10 的负次幂
  *                  float、double的数据不适合在不容许舍入误差的金融计算领域。如果需要精确数字计算或保留指定位数的精度需要使用BigDecimal类
  *          字符类型：
  *              char型数据用来表示通常意义上的“字符”(占2个字符)。
@@ -91,7 +91,7 @@ public class D_DataType {
         //自动类型提升：将取值范围小(或容量小)的类型自动提升为取值范围大(容量大)的类型。
         //1、当把存储范围小的值（常量值、变量的值、表达式计算的结果值）赋值给存储范围大的变量时
         int i1 = 'A'; //65 char自动升级为int，其实就是把字符的编码值赋值给 i 变量了
-        double d1 = 10; //20.0 int自动升级为double
+        double d1 = 10; //10.0 int自动升级为double
         long num = 1234567; //1234567 右边的整数常量值如果在int范围，编译和运行都可通过，这里涉及到数据类型转换
         //byte bigB = 130;//编译错误，右边的整数常量值超过 byte 范围
         long bigNum = 12345678912L;//右边的整数常量值如果超过int范围，必须加L,显式表示long类型。否则编译不通过
@@ -104,14 +104,16 @@ public class D_DataType {
         double sum = i2 + b + d2;//混合运算，升级为 double
         System.out.println(getType(sum) + " " + sum);
 
-        //3、当 byte,short,char 数据类型的变量进行算术运算时，按照 int 类型处理。
+        //3、当 byte,short,char 数据类型的变量进行算术和移位运算时，按照 int 类型处理。
         byte b1 = 1;
         byte b2 = 2;
         //byte b3 = b1 + b2; //编译报错， b1 + b2 自动升级为 int
         char c1 = '0';
         char c2 = 'A';
         int i3 = c1 + c2; //至少需要使用 int 类型来接收
-        System.out.println(b1+ " "+ b2 + " " + c1 + c2 + " " + i3); //113
+        System.out.println(b1+ " "+ b2 + " " + c1 +" "+ c2 + " " + i3); //113
+
+
 
         //强制类型转换：将取值范围大（或容量大）的类型强制转换成取值范围小（或容量小）的类型。
         //1、当把存储范围大的值（常量值、变量的值、表达式计算的结果值）强制转换为存储范围小的变量时，可能会损失精度或溢出。
@@ -131,6 +133,10 @@ public class D_DataType {
         float f2 = 12.3F;
         float f3 = (float)12.3;
         System.out.println(l1 + " " + l2 + " " + l4 + " " + f2 + " " + f3);
+
+        //3、对于byte/short/char三种类型，如果右侧赋值的整型常量没有超过其类型范围，那么javac编译器
+        // 会自动补上一个(byte)/(short)/(char)强转，但右侧常量超过范围会报错。若右侧是变量，不管有没有超过范围，都会编译报错。
+        // double常量不能直接赋值给float，例如 float f = 12.3 这里12.3是double常量，即使12.3没有超过float范围也会报错。
     }
 
     /**
