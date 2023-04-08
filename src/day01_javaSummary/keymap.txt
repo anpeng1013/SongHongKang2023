@@ -57,5 +57,6 @@
     另起一行：shift + enter
 
     在当前文件中查找 -- Ctrl + F
+    在当前文件中替换 -- Ctrl + R
     在所有文件中查找 -- Alt + F
     查找项目文件 -- 双击shift

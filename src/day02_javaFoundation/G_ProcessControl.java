@@ -58,6 +58,21 @@ import java.util.Scanner;
  *                  没有遇到break，则会继续执行当前case之后的其它case中的执行语句。 --->case穿透...直到遇到break关键字或
  *                  执行完所有的case及default的执行语句，跳出当前的switch-case结构。
  *
+ *              增强型switch：
+*               switch(表达式){
+*                   case 常量1 -> {
+ *                      语句块;
+ *                  }
+ *                  case 常量2,常量3 -> {
+ *                      语句块2;
+ *                  }
+ *                  default -> {
+ *                      语句块3;
+ *                  }
+ *              }
+ *              注：增强型switch结构使用lambda表示式，执行命中case对应的语句块后不需要break即可跳出结构。
+ *              并且case中的常量可以包含多个，一般采用增强型switch。
+ *
  *      3、循环结构：
  *          for循环：
  *              for(①初始化;②循环条件;④迭代){
@@ -140,16 +155,6 @@ public class G_ProcessControl {
         }
 
         //多分支
-        switch (num) {
-            case 0 -> System.out.println("zero");
-            case 1 -> System.out.println("one");
-            case 2 -> System.out.println("two");
-            case 3 -> System.out.println("three");
-            case 4 -> System.out.println("four");
-            case 5 -> System.out.println("five");
-            default -> System.out.println("too big!");
-        }
-
         if(num == 10){
             System.out.println("ten");
         }else if(num == 9){
@@ -160,6 +165,22 @@ public class G_ProcessControl {
             System.out.println(num);
         }
 
+        System.out.println("请输入新员工的姓名：");
+        String name = scanner.next();
+        System.out.println("请输入新员工应聘的编程语言：");
+        String language = scanner.next();
+
+        switch (language){
+            case "Java","java","JAVA" ->
+                    //可以直接对多个字符串进行判断，不需要分行，：改为->
+                    System.out.println("员工" + name + "被分配到Java程序开发部门。");
+            //语句结束后不需要break跳出循环。
+            case "C#","c#" ->
+                    System.out.println("员工" + name + "被分配到C#项目维护组。");
+            default ->
+                    System.out.println("本公司不需要" + language + "语言的程序开发人员。");
+        }
+
         //关闭资源
         scanner.close();
     }
@@ -168,5 +189,6 @@ public class G_ProcessControl {
         String name = "anpeng";
         short age = 26;
         System.out.println(name + " " + age);
+
     }
 }
