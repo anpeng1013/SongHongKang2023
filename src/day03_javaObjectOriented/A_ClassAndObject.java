@@ -1,6 +1,6 @@
 package day03_javaObjectOriented;
 
-import javaBean.Person;
+import javaBean.day03.Person;
 
 /**
  * @ClassName: A_ClassAndObject.java

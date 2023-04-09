@@ -1,4 +1,4 @@
-package javaBean;
+package javaBean.day03;
 
 /**
  * @ClassName: Person.java
@@ -6,13 +6,14 @@ package javaBean;
  * @Date: 2023/4/9 12:44
  */
 public class Person {
-    int age;
-    String name;
+    private int age;
+    private String name;
 
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
     }
+    public Person(){}
 
     public void speak(){
         System.out.println("my name is " + this.getName() +
@@ -25,5 +26,14 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
