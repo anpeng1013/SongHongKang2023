@@ -26,7 +26,7 @@ import javaBean.day03.Person;
  *      对于final的成员变量，不提供setXxx()方法。对于static final的成员，习惯上使用public修饰。
  *
  */
-public class C_Encapsulation {
+public class D_Encapsulation {
     public static void main(String[] args) {
         //在其他包的非子类中，只能访问public修饰的类、成员或方法
         Person person;

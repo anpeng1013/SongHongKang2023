@@ -9,27 +9,10 @@ import junit.framework.TestCase;
  */
 public class PersonTest extends TestCase {
 
-    public void testSpeak() {
-        new Person(22,"huli").speak();
-    }
-
-    public void testGetAge() {
-        System.out.println(new Person(23, "anpeng").getName());
-    }
-
-    public void testGetName() {
-        System.out.println(new Person(22, "huli").getAge());
-    }
-
-    public void testSetAge(){
-        Person anpeng = new Person();
-        anpeng.setAge(28);
-        System.out.println(anpeng.getAge());
-    }
-
-    public void testSetName(){
+    public void testTestSpeak() {
         Person person = new Person();
-        person.setName("huli");
-        System.out.println(person.getName());
+        person.setAge(26);
+        person.setName("anpeng");
+        System.out.println("name = " + person.getName() + " age is " + person.getAge());
     }
 }

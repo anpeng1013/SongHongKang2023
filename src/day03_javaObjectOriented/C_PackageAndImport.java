@@ -29,7 +29,7 @@ package day03_javaObjectOriented;
  *      说明：
  *
  */
-public class B_PackageAndImport {
+public class C_PackageAndImport {
     public static void main(String[] args) {
 
     }
