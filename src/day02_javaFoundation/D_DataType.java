@@ -26,7 +26,7 @@ import static util.CustomUtil.getType;
  *                  形式3：Java中还允许使用转义字符‘\’来将其后的字符转变为特殊字符型常量：char c3 = '\n'; // '\n'表示换行符。
  *          布尔类型
  *              boolean类型用来判断逻辑条件，一般用于流程控制语句中。
- *              boolean类型数据只有两个值： true、 false，无其它。
+ *              boolean类型数据只有两个值： true、 false。
  *              建议不要这样写：if(isFlag==true)，很容易写错成 if(isFlag=true)，
  *                      这样就变成赋值isFlag为true而不是判断！老鸟的写法是if(isFlag)或者if(!isFlag)。
  *          运算规则：
