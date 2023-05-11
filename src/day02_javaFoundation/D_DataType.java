@@ -8,7 +8,7 @@ import static util.CustomUtil.getType;
  * @Date: 2023/3/22 17:36
  *
  * 变量类型分类：
- *      基本数据类型：包括整数类型、 浮点数类型、 字符类型、 布尔类型。(byte、short、char、int、long、float、double、boolean)
+ *      基本数据类型：包括整数类型、 浮点数类型、 字符类型、 布尔类型。(byte、short、int、long、float、double、char、boolean)
  *          整数类型：
  *              byte: 1字节、short2字节、int：4字节、long：8字节
  *              定义long类型的变量，赋值时需要以l或L作为后缀，java的整型常量默认为int型。
