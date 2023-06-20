@@ -15,7 +15,7 @@
     光标上移--alt+i
 
     光标返回--alt + b
-    光标前进--alt + n
+    光标前进--alt + n （next代替forward，因为Alt+F用于在所有文件中查找内容）
 
     向左滚动--alt + shift + j
     向右滚动--alt + shift + l
@@ -26,13 +26,11 @@
 
     向上下左右选中--shift+上下左右箭头
 
-    Python or debug console-- Alt+c  debug时进入debug console窗口输入数据，否则调用Python console窗口
-    在Python Console中，若需输入多条代码再运行，可以使用shift + enter，最后使用enter执行
-
     terminal-- Alt+f12
     project -- Alt + 1
     run 窗口-- Alt + 4  # 需要输入数据时，直接进入命令行输入。
-    debug 窗口-- Alt + 5 # 只能显示和隐藏debug大窗口，不能进入其中的console小窗口输入数据。
+    debug 窗口-- Alt + 5 # 只能显示和隐藏debug大窗口，不能进入其中的console小窗口输入数据，要进入console小窗口输入数据
+                           需要再按一次tab键。
     注释当前行--Ctrl + /
 
     选择选项卡 Ctrl + tab  alt + 左右箭头
