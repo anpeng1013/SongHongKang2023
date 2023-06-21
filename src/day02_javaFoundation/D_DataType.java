@@ -8,7 +8,7 @@ import static util.CustomUtil.getType;
  * @Date: 2023/3/22 17:36
  *
  * 变量类型分类：
- *      基本数据类型：包括整数类型、 浮点数类型、 字符类型、 布尔类型。(byte、short、int、long、float、double、char、boolean)
+ *      基本数据类型：包括整数类型、浮点数类型、字符类型、布尔类型。(byte、short、int、long、float、double、char、boolean)
  *          整数类型：
  *              byte: 1字节、short2字节、int：4字节、long：8字节
  *              定义long类型的变量，赋值时需要以l或L作为后缀，java的整型常量默认为int型。
@@ -94,7 +94,8 @@ public class D_DataType {
         double d1 = 10; //10.0 int自动升级为double
         long num = 1234567; //1234567 右边的整数常量值如果在int范围，编译和运行都可通过，这里涉及到数据类型转换
         //byte bigB = 130;//编译错误，右边的整数常量值超过 byte 范围
-        long bigNum = 12345678912L;//右边的整数常量值如果超过int范围，必须加L,显式表示long类型。否则编译不通过
+        long bigNum = 12345678912L;//右边的整数常量值如果超过int范围，必须加L,显式表示long类型。否则编译不通过。
+        // 因为不加L，整型常量默认就是int类型，而又这个字面量超过int范围时，编译肯定会报错。
         System.out.println(i1 + " " + d1 + " " + num + " " + bigNum);
 
         //2、当存储范围小的数据类型与存储范围大的数据类型变量一起混合运算时，会按照其中最大的类型运算。
