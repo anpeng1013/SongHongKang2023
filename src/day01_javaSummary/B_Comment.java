@@ -2,8 +2,6 @@ package day01_javaSummary;
 
 /**
  * 这是文档注释，只能放在类或者方法的的外面，对类和方法进行说明。
- * @author anpeng
- * @version 1.0
  *
  * 1.Java中的注释的种类：单行注释、多行注释、文档注释
  * 2.单行注释、多行注释的作用：
@@ -13,6 +11,9 @@ package day01_javaSummary;
  * 4.文档注释：
  *  文档注释内容可以被JDK提供的工具javadoc所解析，生成一套以网页文件形式体现的该程序的说明文件。
  *  解析命令：javadoc -d B_Comment_doc -encoding utf-8 -author -version b_Comment.java
+ *
+ * @author anpeng
+ * @version 1.0
  */
 public class B_Comment {
     /**
