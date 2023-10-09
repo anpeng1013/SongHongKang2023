@@ -6,7 +6,7 @@ package day02_javaFoundation;
  *       true,false,null不在其中，它们看起来像关键字，其实是字面量，表示特殊的布尔值和空值。
  *  分类：
  *      定义数据类型：
- *          class    int  C     enum     byte      short     interface
+ *          class    int       enum     byte      short     interface
  *          long     float     double   char      boolean   void
  *      定义流程控制：
  *          if       else      switch   case      default   while
