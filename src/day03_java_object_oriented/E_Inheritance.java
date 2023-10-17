@@ -1,4 +1,4 @@
-package day03_javaObjectOriented;
+package day03_java_object_oriented;
 
 /**
  * @ClassName: E_Inheritance.java

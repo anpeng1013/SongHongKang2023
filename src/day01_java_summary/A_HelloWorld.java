@@ -1,4 +1,4 @@
-package day01_javaSummary;
+package day01_java_summary;
 
 /**
  * 总结：

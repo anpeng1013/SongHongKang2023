@@ -1,4 +1,4 @@
-package javaBean.day03;
+package java_bean.day03;
 
 import junit.framework.TestCase;
 

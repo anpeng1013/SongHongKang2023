@@ -1,4 +1,4 @@
-package day01_javaSummary;
+package day01_java_summary;
 
 /**
  * 这是文档注释，只能放在类或者方法的的外面，对类和方法进行说明。
@@ -10,7 +10,8 @@ package day01_javaSummary;
  * 3.单行注释和多行注释的内容不参与编译，多行注释不能嵌套使用。
  * 4.文档注释：
  *  文档注释内容可以被JDK提供的工具javadoc所解析，生成一套以网页文件形式体现的该程序的说明文件。
- *  解析命令：javadoc -d B_Comment_doc -encoding utf-8 -author -version b_Comment.java
+ *  命令行窗口输入如下解析命令：
+ *      javadoc -d B_Comment_doc -encoding utf-8 -author -version b_Comment.java
  *
  * @author anpeng
  * @version 1.0

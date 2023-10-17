@@ -1,6 +1,6 @@
-package day03_javaObjectOriented;
+package day03_java_object_oriented;
 
-import javaBean.day03.Person;
+import java_bean.day03.Person;
 
 /**
  * @ClassName: D_Constructor.java

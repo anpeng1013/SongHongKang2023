@@ -1,4 +1,4 @@
-package day02_javaFoundation;
+package day02_java_foundation;
 
 /**
  * 标识符：Java 中变量、方法、类等要素命名时使用的字符序列，称为标识符。

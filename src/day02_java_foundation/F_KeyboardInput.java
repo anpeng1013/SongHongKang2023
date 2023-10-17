@@ -1,4 +1,4 @@
-package day02_javaFoundation;
+package day02_java_foundation;
 
 //①导包
 import java.util.Scanner;

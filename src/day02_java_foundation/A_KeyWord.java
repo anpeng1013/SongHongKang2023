@@ -1,4 +1,4 @@
-package day02_javaFoundation;
+package day02_java_foundation;
 
 /**
  *  定义：被 Java 语言赋予了特殊含义，用做专门用途的字符串（或单词），全部关键字都是小写字母。
