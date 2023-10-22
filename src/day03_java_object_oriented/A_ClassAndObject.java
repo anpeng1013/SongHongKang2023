@@ -32,7 +32,7 @@ import java_bean.day03.Person;
  *  成员变量 VS 局部变量：
  *      在java中没有全局变量这一说法，所有变量都定义在类属性或方法中。
  *      变量：
- *          局部变量：在参数列表、方法内部、代码块内部定义的变量。 --> 存放在栈内存中，没有默认初始值。
+ *          局部变量：在参数列表、方法内部、代码块内部定义的变量。 --> 存放在栈内存中，没有默认初始值，需要手动初始化。
  *
  *          成员变量：在类的属性中定义的变量。 --> 存放在堆内存中，有默认初始值。
  *                   类变量：以static修饰。
@@ -75,6 +75,6 @@ public class A_ClassAndObject {
         anpeng.setAge(26);
         anpeng.speak();
         //使用匿名对象
-        System.out.println(new Person().getAge()); //int类型默认是0
+        System.out.println(new Person().getAge()); //int类型默认是0，这里使用了匿名对象。
     }
 }

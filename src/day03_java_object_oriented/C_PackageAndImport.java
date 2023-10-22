@@ -1,5 +1,7 @@
 package day03_java_object_oriented;
 
+import java_bean.day03.Person;
+
 /**
  * @ClassName: B_PackageAndImport.java
  * @Author: anpeng
@@ -15,7 +17,7 @@ package day03_java_object_oriented;
  *          5、包解决类命名冲突的问题：即同一个包下，不能定义同名的结构（类、接口）。
  *          6、包控制访问权限。
  *      JDK中主要的包(也叫API):
- *          java.lang----包含一些Java语言的核心类，如String、Math、IntegerSystem和Thread，提供常用功能。
+ *          java.lang----包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。
  *          java.net----包含执行与网络相关的操作的类和接口。
  *          java.io ----包含能提供多种输入/输出功能的类。
  *          java.util----包含一些实用工具类，如定义系统特性、接口的集合框架类、使用与日期日历相关的函数。
@@ -24,14 +26,18 @@ package day03_java_object_oriented;
  *
  *
  *
- * import：导入，为了使用定义在其他包中的类，需要import语句来显示引入指定包下所需的类。
+ * import：导入，为了使用定义在其他包中的类，需要import语句来显示引入指定包下所需的类。相当于import语句告诉编译器到哪里去找这个类。
  *      格式：import 包名.类名;
  *      说明：
+ *          * import语句，声明在包的声明和类的声明之间。
+ *          * 如果需要导入多个类或接口，那么就并列显示多个import语句即可
  *
  */
 public class C_PackageAndImport {
     public static void main(String[] args) {
-
+        Person person = new Person();
+        person.setName("anpeng");
+        person.setAge(26);
+        System.out.println("person = " + person);
     }
-
 }
