@@ -18,7 +18,7 @@ import java_bean.day03.Person;
  *      public      √         √          √               √
  *
  * 具体修饰结构：
- *      外部类：public、default。
+ *      外部类：public、default。(注意: protected、private不能用于修饰外部类!)
  *      成员变量、成员方法、构造器、内部类：public、protected、default、private。
  *
  * 成员属性私有化：

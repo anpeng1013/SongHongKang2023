@@ -8,6 +8,10 @@ package java_bean.day03;
 public class Student extends Person{
     private String school;
 
+    public void speak(){
+        System.out.println("My name is " + getName() + ", a student of " + getSchool() +
+                " and " + getAge() + "years old.");
+    }
     public String getSchool() {
         return school;
     }

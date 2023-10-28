@@ -15,8 +15,8 @@ public class Person {
     private String name;
 
     public void speak(){
-        System.out.println("my name is " + this.getName() +
-                 ", and " + this.getAge() + " years old;");
+        System.out.println("my name is " + getName() +
+                 ", and " + getAge() + " years old;");
 
     }
     public int getAge() {
