@@ -71,7 +71,7 @@ import java_bean.day03.Person;
  *              当子类构造器在执行第一行super()时，子类构造器会将this引用传递到父类构造器中，该this引用依旧表示正在初始化的子类对象。
  *
  */
-public class A_ClassAndObject {
+public class A_Class {
     public static void main(String[] args) {
         Person anpeng = new Person();
         anpeng.setName("anpeng");

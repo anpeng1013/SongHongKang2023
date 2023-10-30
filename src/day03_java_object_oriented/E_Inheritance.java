@@ -53,7 +53,8 @@ import java_bean.day03.Student;
  *         1、子类方法覆盖父类方法时，子类方法的权限必须大于等于父类的权限。
  *         2、子类方法覆盖父类方法时，子类方法抛出的异常必须小于等于父类的异常。
  *         2、父类的私有方法和挎包的缺省方法不能被重写。
- *         3、静态只能覆盖静态，或被静态覆盖。
+ *         3、子类与父类中同名同参数的方法必须同时声明为非static的(即为重写)，或者同时声明为static的（不是重写）。
+ *         因为static方法是属于类的，子类无法覆盖父类的静态方法。
  *
  *
  *     使用重写操作的时机：
@@ -114,6 +115,7 @@ public class E_Inheritance {
         student.setSchool("sun yat sen university");
 
         student.speak(); //测试继承(继承了父类Person的age和name属性)和重写(重写了父类Person的speak方法)
+        student.study();
 
         Cat cat = new Cat(); //测试实例化过程
         cat.setAge(2);

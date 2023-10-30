@@ -19,6 +19,7 @@ public class Person {
                  ", and " + getAge() + " years old;");
 
     }
+
     public int getAge() {
         return age;
     }
