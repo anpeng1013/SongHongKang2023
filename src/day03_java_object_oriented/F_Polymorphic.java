@@ -6,7 +6,7 @@ import java_bean.day03.Teacher;
 
 /**
  * 对象的多态性
- *      多态性，是面向对象中最重要的概念，在Java中的体现为： 对象的多态性：父类的引用指向子类的对象。
+ *      多态性，是面向对象中最重要的概念，在Java中的体现为对象(成员方法)的多态性：父类的引用指向子类的对象。
  *      格式：父类类型 变量名 = 子类对象;   (父类类型是指子类继承的父类或者实现的接口类型)
  *      在java中，子类的对象可以替代父类的对象使用。所以，一个引用类型的变量可能指向（引用）不同类型的对象。
  *
@@ -59,8 +59,8 @@ import java_bean.day03.Teacher;
  *
  * instanceof关键字：
  *      为了避免ClassCastException的发生， Java提供了instanceof关键字，给引用变量做类型的校验。格式如下：
- *      对象object instanceof 数据类型A a
- *      解释：如果对象object的类型是数据类型A或A的父类，则将对象object转换为类型为A的对象a。
+ *          对象object instanceof 数据类型A a
+ *          解释：如果对象object的类型是数据类型A或A的父类，则将对象object转换为类型为A的对象a。
  *
  * @ClassName: F_Polymorphic.java
  * @Author: anpeng
@@ -76,6 +76,7 @@ public class F_Polymorphic {
         person.setName("anpeng");
         //person.study(); //编译时“看左边”： 声明的父类引用变量指向子类对象时，不能调用子类特有方法。
         person.speak(); //运行时“看右边”：声明的父类引用变量指向子类对象时，只能调用子类继承于父类或重写父类的方法。
+        System.out.println(person.getClass()); //class java_bean.day03.Student
 
         //向下转型
         Person[] people = new Person[2];
