@@ -11,6 +11,10 @@ public class Teacher extends Person{
         System.out.println("I am a teacher.");
     }
 
+    public static void walk(){
+        System.out.println("I want to walk.");
+    }
+
     public void teach(){
         System.out.println("I am teaching in the classroom");
     }

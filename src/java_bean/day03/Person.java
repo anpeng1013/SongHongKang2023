@@ -19,7 +19,9 @@ public class Person {
                  ", and " + getAge() + " years old;");
 
     }
-
+    public static void walk(){
+        System.out.println("I am walking...");
+    }
     public int getAge() {
         return age;
     }
