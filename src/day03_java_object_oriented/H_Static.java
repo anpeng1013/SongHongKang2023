@@ -1,5 +1,8 @@
 package day03_java_object_oriented;
 
+import java_bean.day03.Father;
+import java_bean.day03.Son;
+
 /**
  * static关键字：
  *      以static修饰的成员变量、成员方法被称为类属性(或静态变量)和类方法(或静态方法)，统称类(静态)成员。可以被类的所有实例所共享。
@@ -36,6 +39,12 @@ package day03_java_object_oriented;
  */
 public class H_Static {
     public static void main(String[] args) {
+        Father.method();
+        Son.method();//子类继承静态方法。
+
+        Father father = new Son();
+        Father.func();//执行的是编译时类型Father中的func
+        System.out.println(father);//运行时类型还是Son--java_bean.day03.Son@41629346
 
     }
 }
