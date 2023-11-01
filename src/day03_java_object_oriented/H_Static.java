@@ -45,7 +45,6 @@ public class H_Static {
         Son.func();//只是调用了子类的静态方法，并不是重写。
 
         Father father = new Son();
-        Father.method();//执行Father类中的method。
-        System.out.println(father);
+        Father.method();//执行的是Father类中的method。
     }
 }
