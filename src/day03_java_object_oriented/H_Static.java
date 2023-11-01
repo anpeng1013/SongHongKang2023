@@ -46,5 +46,6 @@ public class H_Static {
 
         Father father = new Son();
         Father.method();//执行Father类中的method。
+        System.out.println(father);
     }
 }
