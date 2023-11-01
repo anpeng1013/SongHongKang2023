@@ -23,6 +23,7 @@ import java_bean.day03.Person;
  *          3、没有显式的声明类中的构造器时，系统会默认提供一个无参的构造器并且该构造器的修饰符默认与类的修饰符相同
  *          4、构造器的修饰符只能是权限修饰符，不能被其他任何修饰。比如，不能被static、
  *              final、synchronized、abstract、native修饰，不能有return语句返回值。
+ *          5、可以调用静态的属性和方法。
  */
 public class B_Constructor {
     public static void main(String[] args) {
