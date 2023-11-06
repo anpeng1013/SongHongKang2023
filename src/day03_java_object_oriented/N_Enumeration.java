@@ -87,6 +87,7 @@ import java.util.Scanner;
  * @Date: 2023/11/3 22:05
  */
 public class N_Enumeration {
+    @SuppressWarnings("all")
     public static void main(String[] args) {
         System.out.println("jdk1.5之前-----------");
         System.out.println(Season.SPRING);
