@@ -67,8 +67,8 @@ public class D_DataType {
      */
     static void testPrecision() {
         System.out.println("testFloatPrecision---------------");
-        System.out.println(getType(123)); //java的整型常量默认为int型
-        System.out.println(getType(2.4)); //java的浮点型常量默认为double型
+        System.out.println(getType(123)); //class java.lang.Integer，java的整型常量默认为int型
+        System.out.println(getType(2.4)); //class java.lang.Double，java的浮点型常量默认为double型
         System.out.println(0.1 + 0.2);
         float f1 = 123123123f; //查过七位有效数字，超过的部分会被截断。
         float f2 = f1 + 1;
