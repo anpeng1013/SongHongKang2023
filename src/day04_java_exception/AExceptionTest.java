@@ -1,4 +1,4 @@
-package day04_java_Exception;
+package day04_java_exception;
 
 import org.junit.Test;
 
@@ -64,7 +64,7 @@ import java.util.Scanner;
 public class AExceptionTest {
     //常见的错误Error1-StackOverflowError
     @Test
-    public void test01() {//java.lang.StackOverflowError
+    public void test01() {//java.lang.StackOverflowError 栈溢出错误
         recursion();
     }
 
@@ -76,30 +76,30 @@ public class AExceptionTest {
     //常见的错误Error2-OutOfMemoryError
     @Test
     @SuppressWarnings("all")
-    public void test02() {//java.lang.OutOfMemoryError: Java heap space
+    public void test02() {//java.lang.OutOfMemoryError: Java heap space  堆(内存)溢出错误
         StringBuilder stringBuilder = new StringBuilder();
         while (true) {
             stringBuilder.append("anpeng");
         }
     }
 
-    //运行时异常
+    //运行时异常(非受检异常)
     @Test
-    public void test03() {//java.lang.NullPointerException: Cannot read the array length because "arr[0]" is null
+    public void test03() {//java.lang.NullPointerException: 空指针异常
         int[][] arr = new int[3][];
         System.out.println(arr[0].length);
     }
 
     @Test
     @SuppressWarnings("all")
-    public void test04() {//java.lang.ClassCastException: class java.lang.Integer cannot be cast to class java.lang.String
+    public void test04() {//java.lang.ClassCastException: 类型转换异常
         Object obj = 15;
         String str = (String) obj;
     }
 
     @Test
     @SuppressWarnings("all")
-    public void test05() {//java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+    public void test05() {//java.lang.ArrayIndexOutOfBoundsException: 数组索引越界异常
         int[] arr = new int[5];
         for (int i = 1; i <= 5; i++) {
             System.out.println(arr[i]);
@@ -117,9 +117,32 @@ public class AExceptionTest {
 
     @Test
     @SuppressWarnings("all")
-    public void test07() {//java.lang.ArithmeticException: / by zero
+    public void test07() {//java.lang.ArithmeticException: / by zero 算术异常
         int a = 1;
         int b = 0;
         System.out.println(a / b);
     }
+
+    //编译时异常(受检异常)
+    @Test
+    public void test08(){//java.lang.InterruptedException 中断异常
+        //Thread.sleep(1000); //休眠1秒
+    }
+
+    @Test
+    public void test09(){//ClassNotFoundException 类未找到异常
+        //Class c = Class.forName("java.lang.String");
+        //System.out.println(c);
+    }
+
+    @Test
+    public void test10(){//java.sql.SQLException SQL异常
+        //Connection conn = DriverManager.getConnection("...");
+    }
+
+    @Test
+    public void test11(){//java.io.FileNotFoundException 文件未找到异常
+        //FileInputStream fis = new FileInputStream("anpeng.txt");
+    }
+
 }
