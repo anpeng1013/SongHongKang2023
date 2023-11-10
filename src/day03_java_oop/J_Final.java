@@ -1,4 +1,4 @@
-package day03_java_object_oriented;
+package day03_java_oop;
 
 import java_bean.day03.Child;
 
