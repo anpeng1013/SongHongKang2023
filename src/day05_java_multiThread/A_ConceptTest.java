@@ -47,7 +47,8 @@ import org.junit.Test;
  * @Author: anpeng
  * @Date: 2023/11/8 17:26
  */
-public class AConceptTest {
+@SuppressWarnings("all")
+public class A_ConceptTest {
     @Test
     public void test(){
         System.out.println("this is Thread concept");

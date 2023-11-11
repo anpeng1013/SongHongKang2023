@@ -27,7 +27,8 @@ import java.util.Scanner;
  * @Author: anpeng
  * @Date: 2023/11/8 16:45
  */
-public class CCustomExceptionTest {
+@SuppressWarnings("all")
+public class C_CustomExceptionTest {
     @Test
     public void test() throws FuShuException {
         createPerson();//对抛出编译时异常的方法，要么try-catch捕获处理，要么继续抛出

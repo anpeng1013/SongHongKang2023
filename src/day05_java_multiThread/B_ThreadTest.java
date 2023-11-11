@@ -163,7 +163,8 @@ import org.junit.Test;
  * @Author: anpeng
  * @Date: 2023/11/9 17:01
  */
-public class BThreadTest {
+@SuppressWarnings("all")
+public class B_ThreadTest {
     //方式1：继承Thread类
     @Test
     @SuppressWarnings("all")

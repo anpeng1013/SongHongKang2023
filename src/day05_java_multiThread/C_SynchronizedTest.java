@@ -63,7 +63,8 @@ import org.junit.Test;
  * @Author: anpeng
  * @Date: 2023/11/10 22:08
  */
-public class CSynchronizedTest {
+@SuppressWarnings("all")
+public class C_SynchronizedTest {
     //三个窗口去卖10张票
     //1、局部变量不能共享。
     @Test

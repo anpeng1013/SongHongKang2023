@@ -129,7 +129,8 @@ import java.util.Scanner;
  * @Author: anpeng
  * @Date: 2023/11/7 14:57
  */
-public class BTryCatchAndThrowsTest {
+@SuppressWarnings("all")
+public class B_TryCatchAndThrowsTest {
     int x;
 
     //测试try catch finally 捕获运行时异常
@@ -150,7 +151,7 @@ public class BTryCatchAndThrowsTest {
     @SuppressWarnings("all")
     public void test02(){
         int y;
-        BTryCatchAndThrowsTest tct = new BTryCatchAndThrowsTest();
+        B_TryCatchAndThrowsTest tct = new B_TryCatchAndThrowsTest();
         try {
             y = 3 / tct.x;
         }catch (ArithmeticException e){

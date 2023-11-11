@@ -61,7 +61,8 @@ import java.util.Scanner;
  * @Author: anpeng
  * @Date: 2023/11/6 16:36
  */
-public class AExceptionTest {
+@SuppressWarnings("all")
+public class A_ExceptionTest {
     //常见的错误Error1-StackOverflowError
     @Test
     public void test01() {//java.lang.StackOverflowError 栈溢出错误
