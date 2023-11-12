@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Window implements Runnable{
     int ticket = 100;
     //1、创建Lock的实例，必须确保多个线程共享同一个Lock实例
-    private final ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();//开发中最常用的就是这个，可重入锁。
 
     @Override
     public void run() {
