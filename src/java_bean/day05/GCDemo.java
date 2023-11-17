@@ -5,6 +5,7 @@ package java_bean.day05;
  * @Author: anpeng
  * @Date: 2023/11/17 17:08
  */
+@SuppressWarnings("all")
 public class GCDemo {
     private int value;
     public GCDemo(int value) {
