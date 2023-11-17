@@ -13,8 +13,8 @@ import static util.CustomUtil.getType;
  *              byte: 1字节、short2字节、int：4字节、long：8字节
  *              定义long类型的变量，赋值时需要以l或L作为后缀，java的整型变量默认为int型。
  *          浮点类型：
- *              float：4字节，尾数可以精确到7位有效数字。定义float类型的变量，赋值时需要以f或F作为后缀。
- *              double：8字节：精度是float的两倍。java的浮点型变量默认为double型。
+ *              float：4字节，尾数可以精确到小数点后7位有效数字。定义float类型的变量，赋值时需要以f或F作为后缀。
+ *              double：8字节：精度是float的两倍(15位有效数字)。java的浮点型变量默认为double型。
  *              注意：并不是所有的小数都能可以精确的用二进制浮点数表示。例如：二进制浮点数不能精确的表示 0.1、 0.01、 0.001 这样 10 的负次幂
  *                  float、double的数据不适合在不容许舍入误差的金融计算领域。如果需要精确数字计算或保留指定位数的精度需要使用BigDecimal类
  *          字符类型：
@@ -70,11 +70,12 @@ public class F_DataType {
         System.out.println(getType(123)); //class java.lang.Integer，java的整型常量默认为int型
         System.out.println(getType(2.4)); //class java.lang.Double，java的浮点型常量默认为double型
         System.out.println(0.1 + 0.2);
-        float f1 = 123123123f; //查过七位有效数字，超过的部分会被截断。
+        float f1 = 123123129f; //超过小数点后七位的不是有效数字。
         float f2 = f1 + 1;
         System.out.println(f1);
         System.out.println(f2);
         System.out.println(f1 == f2);
+        System.out.println(3.1234567890123456289); ////超过小数点后十五位的不是有效数字。
     }
 
     /**
