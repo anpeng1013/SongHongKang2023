@@ -19,7 +19,7 @@ public class Window implements Runnable{
                 //2、调用lock()，实现需共享代码的锁定
                 lock.lock();
                 if(ticket > 0){
-                    System.out.println(Thread.currentThread().getName() + "卖 出一张票，票号:" + ticket);
+                    System.out.println(Thread.currentThread().getName() + "卖出一张票，票号:" + ticket);
                     ticket--;
                     Thread.yield();//当前线程放弃CPU资源重新调度，方便观察多线程执行情况。
                 }else {

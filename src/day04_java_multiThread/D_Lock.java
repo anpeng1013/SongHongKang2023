@@ -17,7 +17,7 @@ import java_bean.day04.Window;
  *      - public void unlock(); 释放同步锁
  *
  *      代码结构如下：
- *          class A{
+ *          class A implements Runnable{
  *              //1. 创建 Lock 的实例，必须确保多个线程共享同一个 Lock 实例
  *              private final ReentrantLock lock = new ReentrantLock();
  *              public void m(){

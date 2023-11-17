@@ -12,7 +12,7 @@ public class Clerk {
     private static final int MIN_PRODUCT = 1;
 
     //增加产品
-    public synchronized void addProduct() {
+    public synchronized void addProduct() {//生产者调用
         if (productNum < MAX_PRODUCT) {
             productNum++;
             System.out.println(Thread.currentThread().getName() + "生产了第" + productNum + "个产品");
@@ -20,7 +20,7 @@ public class Clerk {
             this.notifyAll();
         } else {
             try {
-                this.wait();
+                this.wait();//this是clerk锁对象，此时wait是让调用该方法的线程去等待，即生产者线程等待
             }catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -28,7 +28,7 @@ public class Clerk {
     }
 
     //减少产品
-    public synchronized void minusProduct(){
+    public synchronized void minusProduct(){//消费者调用
         if(productNum >= MIN_PRODUCT){
             System.out.println(Thread.currentThread().getName() + "消费了第" + productNum + "个产品");
             productNum--;
@@ -36,7 +36,7 @@ public class Clerk {
             this.notifyAll();
         } else {
             try {
-                this.wait();
+                this.wait();//this是clerk锁对象，此时wait是让调用该方法的线程去等待，即消费者线程等待
             }catch (InterruptedException e) {
                 e.printStackTrace();
             }

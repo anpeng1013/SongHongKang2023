@@ -129,7 +129,7 @@ import java.util.Arrays;
  *      因此，JDK又在java.lang包提供了可变字符序列 StringBuffer 和 StringBuilder 类型。
  *
  *      StringBuffer 与 StringBuilder 的理解
- *          * java.lang.StringBuffer 代表可变的字符序列，JDK1.0 中声明，可以对字符串内容进行增删，此时不会产生新的对象。
+ *          * java.lang.StringBuffer 代表可变的字符序列，JDK1.1 中声明，可以对字符串内容进行增删，此时不会产生新的对象。
  *          * StringBuffer和StringBuilder都继承AbstractStringBuilder类，AbstractStringBuilder有byte[] value字节数组。JDK8中为字符数组，
  *              , value没有声明为final的，说明value可以指向新的数组。
  *          * StringBuilder 和 StringBuffer 非常类似，均代表可变的字符序列，而且提供相关功能的方法也一样。
@@ -213,7 +213,7 @@ public class A_String {
         System.out.println(str6);
 
         //5.String的转换
-        System.out.println("=======String的构造=============");
+        System.out.println("=======String的转换=============");
         String str7 = "中国";
         //ISO8859-1 把所有的字符都当做一个byte处理，处理不了多个字节
         System.out.println(str7.getBytes(StandardCharsets.ISO_8859_1).length);//2

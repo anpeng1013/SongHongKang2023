@@ -12,7 +12,7 @@ public class LocalTicket extends Thread{
 
     @Override
     public void run() {
-        int tickets = 10;
+        int tickets = 10;//局部变量不能共享
         while (tickets > 0){
             System.out.println(getName() + "卖出一张票，票号：" + tickets);
             tickets -= 1;

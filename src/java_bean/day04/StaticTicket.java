@@ -6,7 +6,7 @@ package java_bean.day04;
  * @Date: 2023/11/11 10:14
  */
 public class StaticTicket extends Thread{
-    private static int ticket = 10;
+    private static int ticket = 10;//静态变量是共享的
 
     public StaticTicket(String s) {
         super(s);

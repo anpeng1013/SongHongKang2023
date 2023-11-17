@@ -7,7 +7,7 @@ package java_bean.day04;
  */
 public class Ticket {
     //1、编写资源类
-    private int ticket = 10;
+    private int ticket = 10;//共享同一个资源对象
     public void sale() {
         if (ticket > 0) {
             try {

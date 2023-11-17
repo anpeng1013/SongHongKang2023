@@ -6,7 +6,7 @@ package java_bean.day04;
  * @Date: 2023/11/11 10:29
  */
 public class SameInstanceTicket implements Runnable{
-    private int ticket = 10;
+    private int ticket = 10;//用同一个Runnable实现类对象创建多线程时，实现类对象的实例变量被所有线程所共享
 
     @Override
     @SuppressWarnings("all")

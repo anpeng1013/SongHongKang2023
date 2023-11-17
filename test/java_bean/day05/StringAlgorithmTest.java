@@ -111,8 +111,8 @@ public class StringAlgorithmTest {
             String minStr = (str1.length() > str2.length()) ? str2 : str1;
             int len = minStr.length();
             for (int i = 0; i < len; i++) {//1、将短串的长度从尾部逐次减一
-                for (int x = 0, y = len - i; y <= len; x++, y++){//2、将尾部逐次减一后的短串，从前往后去滑动（类似于滑动窗口）并判断长串中
-                    // 是否包含这一长度的短串。
+                for (int x = 0, y = len - i; y <= len; x++, y++){//2、将尾部逐次减一后的短串，在原始短串中去从前往后去滑动（类似于
+                    // 滑动窗口）并判断长串中是否包含这一长度的短串。
                     if (maxStr.contains(minStr.substring(x, y))){
                         return minStr.substring(x, y);
                     }
@@ -130,7 +130,7 @@ public class StringAlgorithmTest {
             String minStr = (str1.length() > str2.length()) ? str2 : str1;
             int len = minStr.length();
             for (int i = 0; i < len; i++) {
-                for (int x = 0, y = len -i; y <= len; x++, y++){
+                for (int x = 0, y = len -i; y <= len; x++, y++){//滑动窗口思想，和上面一样
                     String subString = minStr.substring(x, y);
                     if(maxStr.contains(subString)){
                         stringBuffer.append(subString + ",");

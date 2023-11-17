@@ -6,7 +6,7 @@ package java_bean.day04;
  * @Date: 2023/11/11 10:05
  */
 public class DifferentInstanceTicket extends Thread{
-    private int ticket = 10;
+    private int ticket = 10;//不同Thread子类实例的成员变量不能共享。
 
     public DifferentInstanceTicket(String str){
         super(str);
