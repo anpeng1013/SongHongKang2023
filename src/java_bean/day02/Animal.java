@@ -27,7 +27,7 @@ public class Animal {
         num = 2;
         System.out.println("Animal constructor code is running..." + num);
         eat(); //调用的是子类Cat中的eat方法，父类的eat方法被重写了。
-        System.out.println(this);
+        System.out.println(this);//java_bean.day02.Cat@4e50df2e 传进来的this是子类对象。
     }
     public void eat(){
         System.out.println("Animal eat food...");

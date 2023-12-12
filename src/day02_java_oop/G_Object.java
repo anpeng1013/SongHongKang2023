@@ -16,7 +16,7 @@ import java_bean.day02.User;
  *      1、（重点）equals()
  *          ==:
  *              * 基本类型比较的是值，只要两个变量的值相等，即为true。
- *              * 引用类型比较的是地址，只要指向同一个对象时，==才返回true。两边的数据类型必须兼容（相同或子父类），否则编译出错。
+ *              * 引用类型比较的是地址，只有指向同一个对象时，==才返回true。两边的数据类型必须兼容（相同或子父类），否则编译出错。
  *          equals：所有类都继承了Object，也就获得了equals()方法，可以被重写。
  *              * 只能比较引用类型，Object类源码中的equals()的作用与“==”相同：比较是否指向同一个对象。
  *              * 格式：object1.equals(object2)
@@ -28,26 +28,28 @@ import java_bean.day02.User;
  *                  2、自反性：x.equals(x)必须是true
  *                  3、传递性：x.equals(y)是true，而且y.equals(z)是true，那么x.equals(z)也应该是true。
  *                  4、一致性：如果x.equals(y)是true，只要x和y的内容一直不变，不管x.equals(y)重复多少次，返回都是true。
- *                  5、任何情况下，x.equals(null)永远是false，x.equals(和x不同类型的对象)永远是false。
+ *                  5、任何情况下，x.equals(null)永远是false，x.equals(非x类型的对象)永远是false。
  *
  *      2、（重点）hashCode()
  *          * 什么是hashCode
  *              hashCode()的作用是获取哈希码，也称为散列码；它实际上是返回一个int整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。
- *              hashcode方法是本地方法，也就是用c语言或c++实现的，该方法没有被重写时，是将对象的{内存地址}转换为{整数}之后返回。
- *          * 为什么要有hashCode
- *              以“HashSet如何检查重复”为例子来说明为什么要有hashCode？当你把对象加入HashSet时， HashSet会先计算对象的hashcode
- *              值来判断对象加入的位置，同时也会与其他已经加入的对象的hashcode值作比较，如果没有相符的hashcode， HashSet会假设对象
- *              没有重复出现。但是如果发现有相同hashcode值的对象，这时会调用 equals()方法来检查hashcode相等的对象是否真的相同。
- *              如果两者相同，HashSet就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。这样就大大减少了equals的次数，
+ *              hashCode方法是本地方法，也就是用c语言或c++实现的，该方法没有被重写时，是将对象的{内存地址}转换为{整数}之后返回。
+ *          * 为什么要有hashCode---以“HashSet如何检查重复”为例子来说明为什么要有hashCode？
+ *              当你把对象加入HashSet时，如果没有hashCode，HashSet只能对集合中的数据对象一个个地调用equals方法进行比较，看看集合中是否
+ *              已经包含了该对象，最坏情况是，将集合中的所有对象都比较完后发现不包含该对象，再将其加入集合中，这样每次往集合中加入数据时，
+ *              都会大量调用equals方法，效率非常低。
+ *              而引入hashCode之后，往集合中加入数据对象时，会先计算对象的hashCode值来判断对象加入的索引位置，若该位置没有数据对象，则HashSet
+ *              会假设对象没有被加入过，并将其加入集合中。但是，如果发现该位置有对象（可能哈希冲突），这时会调用equals()方法来检查hashCode相等
+ *              的对象是否真的相同。如果两者相同，HashSet就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。这样就大大减少了equals的次数，
  *              相应就大大提高了执行速度。
  *          * 为什么重写equals时必须重写hashCode
  *              如果自定义的类没有覆写hashcode方法，就会调用其父类Object中的hashcode方法，默认是根据地址进行哈希运算，
  *              也就是两个内容值相同的对象实例，其hashcode值不一样。如果自定义的类中重写了equals方法(以内容是否相同来判断对象是否相等)
  *              ，但没有重写hashcode方法时，会导致内容相同的两个对象(即相等的两个对象)，其hashcode值不一样(违反Object类的规范)，并且
  *              这种对象在hashmap、hashset中会出问题，导致相同的key可以重复放入。重写hashCode方法，其实就是将，由对象内存地址哈希成整数
- *              转换成，由对象内容转成整数。
+ *              转换成，由对象内容哈希成整数。
  *          * Object类规范
- *              1、两个对象相等，则hashCode一定相同。但hashCode相同的两个对象不一定相等。
+ *              1、两个对象相等，则hashCode一定相同。但hashCode相同的两个对象不一定相等。（因为可能哈希冲突）
  *              2、两个对象相等，则对两个对象分别调用equals方法都返回true。
  *              3、hashCode()的默认行为是对堆上的对象内存地址产生哈希值。如果没有重写hashCode()，则该类的两个对象无论如何都不会相等
  *              （即使这两个对象指向相同的数据）
@@ -55,7 +57,7 @@ import java_bean.day02.User;
  *              因为哈希函数可能会冲突碰撞，即不同的数据经过哈希函数运算后，得到相同的哈希值。
  *
  *      3、（重点）toString
- *          * 默认情况下，toString返回的是"对象的运行类型@对象的hashCode值的十六进制形式"
+ *          * 默认情况下，toString返回的是"对象的运行时类型@对象的hashCode值的十六进制形式"
  *          * 在自定义类中，可以根据需要重写toString方法，如String类重写了toString方法，返回字符串的值。
  *          * 在String与其他类型数据进行连接操作时，会自动调用toString方法。
  *          * 直接调用System.out.println(object)打印对象，默认会自动调用这个对象的toString方法。

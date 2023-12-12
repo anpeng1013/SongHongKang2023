@@ -12,7 +12,8 @@ public enum PrimaryColor {
 
     private final String description;
 
-    private PrimaryColor(String description){
+    PrimaryColor(String description){
+        //有参构造函数的private修饰符可以省略
         this.description = description;
     }
 

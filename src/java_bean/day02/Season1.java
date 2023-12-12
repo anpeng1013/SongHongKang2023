@@ -36,8 +36,8 @@ public enum Season1 implements Info{
     //2. 声明每个对象拥有的属性：用private final 修饰
     private final String SEASON_NAME;
     private final String SEASON_DESC;
-    //3. 私有化类的构造器
-    private Season1(String seasonName,String seasonDesc){
+    //3. 枚举类的构造器默认是私有化，private修饰符可以省略
+    Season1(String seasonName,String seasonDesc){
         this.SEASON_NAME = seasonName;
         this.SEASON_DESC = seasonDesc;
     }

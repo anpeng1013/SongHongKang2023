@@ -15,7 +15,7 @@ public enum SeasonEnum {
     private final String seasonName;
     private final String seasonDesc;
 
-    private SeasonEnum(String seasonName, String seasonDesc) {
+    SeasonEnum(String seasonName, String seasonDesc) {
         this.seasonName = seasonName;
         this.seasonDesc = seasonDesc;
     }

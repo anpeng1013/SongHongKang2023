@@ -139,5 +139,5 @@ public class O_Annotation {
         return Math.PI * radius *radius;
     }
 
-    //Junit单元测试，见test/java_bean.day03/JUnitTest.java
+    //Junit单元测试，见test/java_bean.day02/JUnit4Test.java
 }

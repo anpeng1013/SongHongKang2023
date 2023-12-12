@@ -25,7 +25,7 @@ public class MemberOuter {
             System.out.println("Outer.a = " + MemberOuter.a);//内外同名时，外部静态成员直接类名调用。
             System.out.println("Inner.a = " + a);//内外同名时，采取就近原则
             System.out.println("Outer.b = " + b);//静态内部类的非静态方法可以访问外部的静态变量。
-            System.out.println("Inner.c = " + c);//静态内部类的非静态方法可以访问自己内部的非静态变量，就近原则。
+            System.out.println("Inner.c = " + c);//静态内部类的非静态方法可以访问自己内部的非静态变量。
             //System.out.println("d = " + d);整个内部类是静态的，因此内部类里面不能访问外部类的非静态成员。
         }
     }
