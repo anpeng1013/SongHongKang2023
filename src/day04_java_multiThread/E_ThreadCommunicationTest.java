@@ -23,7 +23,7 @@ import org.junit.Test;
  *          2. notify：则选取所通知对象的 wait set 中的一个线程释放；
  *          3. notifyAll：则释放所通知对象的 wait set 上的全部线程。
  *          注意：
- *              被通知的线程被唤醒后也不一定能立即恢复执行，因为它当初中断的地方一般是在同步块内，而此刻它已经不持有锁，所以它需要再次尝试去
+ *              被唤醒的线程,在唤醒后也不一定能立即恢复执行，因为它当初中断的地方一般是在同步块内，而此刻它已经不持有锁，所以它需要再次尝试去
  *              获取锁（很可能面临其它线程的竞争），成功后才能在当初调用wait方法之后的地方恢复执行。
  *          总结：
  *              * 如果被唤醒后能获取锁，线程就从 WAITING 状态变成 RUNNABLE（可运行）状态；
@@ -72,7 +72,7 @@ import org.junit.Test;
  *
  *      不会释放锁的操作：
  *          * 线程执行同步代码块或同步方法时，程序调用 Thread.sleep()、Thread.yield()方法暂停当前线程的执行。
- *          * 线程执行同步代码块时，其他线程调用了该线程的 suspend() 方法将该该线程挂起，该线程不会释放锁（同步监视器）。
+ *          * 线程执行同步代码块时，其他线程调用了该线程的 suspend() 方法将该线程挂起，该线程不会释放锁（同步监视器）。
  *              应尽量避免使用 suspend()和 resume()这样的过时来控制线程。
  *
  * @ClassName: E_ThreadCommunication.java
@@ -92,7 +92,7 @@ public class E_ThreadCommunicationTest {
 
         try {
             t1.join();
-            t2.join();
+             t2.join();
             System.out.println("打印结束！");
         }catch (InterruptedException e){
             e.printStackTrace();

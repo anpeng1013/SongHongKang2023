@@ -20,7 +20,7 @@ import java_bean.day04.Window;
  *          class A implements Runnable{
  *              //1. 创建 Lock 的实例，必须确保多个线程共享同一个 Lock 实例
  *              private final ReentrantLock lock = new ReentrantLock();
- *              public void m(){
+ *              public void run(){
  *                  //2. 调动 lock()，实现需共享的代码的锁定
  *                  lock.lock();
  *                  try{

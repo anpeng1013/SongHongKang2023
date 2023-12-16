@@ -47,7 +47,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @Date: 2023/11/12 15:25
  */
 public class G_ThreadPool {
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("all")
     public static void main(String[] args) {
         //1、提供指定线程数量的线程池
         ExecutorService service = Executors.newFixedThreadPool(10);

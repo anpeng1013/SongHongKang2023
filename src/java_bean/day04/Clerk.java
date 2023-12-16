@@ -15,7 +15,7 @@ public class Clerk {
     public synchronized void addProduct() {//生产者调用
         if (productNum < MAX_PRODUCT) {
             productNum++;
-            System.out.println(Thread.currentThread().getName() + "生产了第" + productNum + "个产品");
+            System.out.println(Thread.currentThread().getName() + "生产了一个产品，现在有" + productNum + "个产品");
             //唤醒消费者
             this.notifyAll();
         } else {
@@ -30,8 +30,8 @@ public class Clerk {
     //减少产品
     public synchronized void minusProduct(){//消费者调用
         if(productNum >= MIN_PRODUCT){
-            System.out.println(Thread.currentThread().getName() + "消费了第" + productNum + "个产品");
             productNum--;
+            System.out.println(Thread.currentThread().getName() + "消费了一个产品，还剩有" + productNum + "个产品");
             //唤醒生产者
             this.notifyAll();
         } else {

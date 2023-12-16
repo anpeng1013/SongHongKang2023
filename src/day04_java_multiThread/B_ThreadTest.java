@@ -147,9 +147,8 @@ import org.junit.Test;
  *          * Terminated(被终止)：表明此线程已经结束生命周期，终止运行。
  *          * BLOCKED(锁阻塞)：正在等待一个监视器锁(对象)的状态，只有获得锁对象的线程才能有执行机会。比如，线程A与线程B代码中使用同一个锁，
  *                      如果线程A获取到锁，线程A进入到Runnable状态，那么线程B就进入到Blocked锁阻塞状态。
- *          * TIMED_WAITING(计时等待)：一个正在限时等待另一个线程执行一个（唤醒）动作的线程处于这一状态。当前线程执行过程中遇到Thread类的
- *                      sleep或join，Object类的wait， LockSupport类的park方法，并且在调用这些方法时，设置了时间，那么当前线程会进入
- *                      TIMED_WAITING，直到时间到，或被中断。
+ *          * TIMED_WAITING(计时等待)：一个正在限时等待的线程处于这一状态。当前线程执行过程中遇到Thread类的sleep或join，Object类的wait，
+ *                      LockSupport类的park方法，并且在调用这些方法时，设置了时间，那么当前线程会进入TIMED_WAITING，直到时间到，或被中断。
  *          * WAITING(无限等待)：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。当前线程执行过程中遇到遇到Object类
  *                      的wait，Thread类的join，LockSupport类的park方法，并且在调用这些方法时，没有指定时间，那么当前线程会进入WAITING状态，
  *                      直到被唤醒。
@@ -179,7 +178,6 @@ public class B_ThreadTest {
         mt2.start();
         //3、在主方法线程中执行for循环
         for (int i = 0; i < 10; i++) {
-            mt1.join();
             System.out.println("main线程！" + i);
         }
 
