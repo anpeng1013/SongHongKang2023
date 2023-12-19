@@ -84,7 +84,7 @@ import java.util.Arrays;
  *              boolean contains(xx)：是否包含xx。
  *              int indexOf(xx)：从前往后找当前字符串中xx，即如果有返回第一次出现的下标，要是没有返回-1。
  *              int indexOf(String str, int fromIndex)：返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。
- *              int lastIndexOf(xx)：从后往前找当前字符串中xx，即如果有返回最后一次出现的下标，要是没有返回-1。
+ *              int lastIndexOf(xx)：从后往前找当前字符串中xx，即如果有, 返回最后一次出现的下标，要是没有返回-1。
  *              int lastIndexOf(String str, int fromIndex)：返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索。
  *
  *          截取：
@@ -125,7 +125,7 @@ import java.util.Arrays;
  *                  3、字符数组变回字符串（构造器new String(arr)）
  *
  * 字符串相关类之可变字符序列： StringBuffer  和 StringBuilder
- *      String对象是不可变对象，虽然可以共享常量对象，但是对于频繁字符串的修改和拼接操作，都会创建新的常量对象，效率极低，空间消耗也比较高。
+ *      String对象是不可变对象，虽然可以共享常量对象，但是对于字符串频繁的修改和拼接操作，都会创建新的常量对象，效率极低，空间消耗也比较高。
  *      因此，JDK又在java.lang包提供了可变字符序列 StringBuffer 和 StringBuilder 类型。
  *
  *      StringBuffer 与 StringBuilder 的理解
@@ -195,7 +195,7 @@ public class A_String {
 
         //4、String的构造
         System.out.println("=======String的构造=============");
-        char[] abc = {'a', 'b', 'c'}; //在堆区创建了一个字节数组对象{'a', 'b', 'c'}
+        char[] abc = {'a', 'b', 'c'}; //在堆区创建了一个字符数组对象{'a', 'b', 'c'}
         String str = new String();//在堆区创建了一个字符串对象str。并在常量池中创建了一个空字符串""，str中的value指向常量中的这个空字符串。
         System.out.println(str);
         String str1 = "abc"; //在常量池中创建了一个字符串常量"abc", str1指向该字符串常量"abc"。

@@ -39,7 +39,7 @@ public class StringAlgorithmTest {
 
     //题目2、将一个字符串进行反转。将字符串中指定部分进行反转。比如："abcdefg"反转为"abfedcg"--> 其中cdef反转为fedc
     //方式1
-    public String reverse1(String str, int start, int end) {//start: 3, end: 5
+    public String reverse1(String str, int start, int end) {//start: 2, end: 5
         if (str != null) {
             char[] charArray = str.toCharArray();
             for (int i = start, j = end; i < j; i++, j--) {

@@ -17,15 +17,16 @@ public class StringAPITest {
         //将用户输入的单词全部转为小写，如果用户没有输入单词，重新输入
         Scanner input = new Scanner(System.in);
         String word;
-        while (true) {
+        while (true) {//该方法可以一直接收输入
             System.out.println("请输入单词：");
             word = input.nextLine();
             if (word.trim().length() != 0) {
                 word = word.toLowerCase();
+                System.out.println(word);
+            }else{
                 break;
             }
         }
-        System.out.println(word);
     }
 
     @Test
@@ -48,12 +49,13 @@ public class StringAPITest {
             code += array[rand.nextInt(array.length)];
         }
         System.out.println("验证码：" + code);
-        //将用户输入的单词全部转为小写，如果用户没有输入单词，重新输入
         Scanner input = new Scanner(System.in);
         System.out.println("请输入验证码：");
         String inputCode = input.nextLine();
-        if (!code.equalsIgnoreCase(inputCode)) {
+        if (!code.equals(inputCode)) {
             System.out.println("验证码输入不正确");
+        }else {
+            System.out.println("验证码正确");
         }
     }
 

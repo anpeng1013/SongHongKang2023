@@ -60,7 +60,7 @@ import java.util.Set;
  *          方法                              描述
  *          now()                            静态方法，返回默认 UTC 时区的 Instant 类的对象
  *          ofEpochMilli(long epochMilli)    静态方法，返回在1970-01-01 00:00:00基础上加上指定毫秒数之后的 Instant 类的对象。
- *          atOffset(ZoneOffset offset)      结合即时的偏移来创建一个 OffsetDateTime
+ *          atOffset(ZoneOffset offset)      结合即时的偏移来创建一个 OffsetInstant
  *          toEpochMilli()                   返回 1970-01-01 00:00:00 到当前时间的毫秒数，即为时间戳
  *
  *      日期时间格式化：DateTimeFormatter
@@ -114,7 +114,7 @@ public class C_DateTimeSinceJDK8 {
         localDate = LocalDate.of(2019, 5, 13);
         System.out.println(localDate);//2019-05-13
         System.out.println(localDate.getDayOfYear());//133
-        System.out.println(localDate.plusDays(160));//2019-10-20
+        System.out.println(localDate.plusDays(160));//2019-10-20, 返回的是新的日期对象，原来的日期对象不会改变。
         System.out.println(localDate.withDayOfMonth(28));//2019-05-28
         System.out.println(localDate.isLeapYear());//false 不是闰年
         System.out.println(localDate.minusYears(4));//2015-05-13

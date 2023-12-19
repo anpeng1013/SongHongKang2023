@@ -45,9 +45,9 @@ import java.util.Date;
  *               E            星期中的天数                   Text          Tuesday；Tue
  *               a            AM/pm标记                     Text          PM下午
  *               H            一天中的小时数（0-23）          Number        23时
- *               k            一天中的小数数（1-24）          Number        24时
- *               K            am/pm中的小数数（0-11）         Number        0时
- *               h            am/pm中的小数数（1-12）         Number        12时
+ *               k            一天中的小时数（1-24）          Number        24时
+ *               K            am/pm中的小时数（0-11）         Number        0时
+ *               h            am/pm中的小时数（1-12）         Number        12时
  *               m            小时中的分钟数                  Number        40分钟
  *               s            分钟中的秒数                    Number        55秒
  *               S            毫秒数                         Number        978毫秒
