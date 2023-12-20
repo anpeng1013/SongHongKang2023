@@ -3,6 +3,7 @@ package day06_java_container;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -26,6 +27,10 @@ import java.util.Collection;
  *              -- boolean removeAll(Collection coll)：从当前集合中删除所有与coll集合中相同的元素，即this = this - this ∩ coll
  *              -- boolean retainAll(Collection coll)：使当前集合仅保留与coll集合相同的元素，即this = this ∩ coll
  *
+ *          - 其它
+ *              -- Object[] toArray()：返回包含当前集合所有元素的数组
+ *              -- HashCode()：获取集合对象的哈希值
+ *              -- iterator()：返回该集合的迭代器对象，用于遍历集合。
  *
  *
  * @ClassName: B_CollectionTest.java
@@ -148,4 +153,23 @@ public class B_CollectionTest {
         System.out.println("coll.retainAll(other)之后， coll = " + coll);
         System.out.println("coll.retainAll(other)之后， other = " + other);
     }
+
+    @Test
+    public void testToArray(){
+        Collection coll = new ArrayList();
+        coll.add("小李广");
+        coll.add("扫地僧");
+        coll.add("石破天");
+        coll.add("佛地魔");
+
+        //集合转换为数组：集合的 toArray()方法
+        Object[] objects = coll.toArray();
+        System.out.println("用数组返回 coll 中所有元素： " + Arrays.toString(objects));
+
+        //数组转换为集合：调用 Arrays 的 asList(Object ...objs)
+        Object[] arr1 = new Object[]{123,"AA","CC"};
+        Collection list = Arrays.asList(arr1);
+        System.out.println(list);
+    }
+
 }
