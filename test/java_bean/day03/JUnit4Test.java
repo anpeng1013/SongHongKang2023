@@ -1,4 +1,4 @@
-package java_bean.day02;
+package java_bean.day03;
 
 import org.junit.Test;
 

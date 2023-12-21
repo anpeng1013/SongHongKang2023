@@ -1,5 +1,6 @@
-package java_bean.day02;
+package java_bean.day03;
 
+import java_bean.day02.Student;
 import junit.framework.TestCase;
 
 /**
