@@ -57,9 +57,6 @@ package day01_java_foundation;
  *                                                     或(每行长度不一致)  数组名 = new 元素类型[总行数];
  *                                                                        数组名[行下标] = new 元素类型[该行的总列数]
  *
- *
- *
- *
  */
 public class K_Array {
     public static void main(String[] args) {
