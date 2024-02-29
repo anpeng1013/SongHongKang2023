@@ -22,6 +22,7 @@ import org.junit.Test;
  * @Author: anpeng
  * @Date: 2024/1/17 18:45
  */
+@SuppressWarnings("all")
 public class B_ArrayTest {
     @Test
     public void test01(){
