@@ -23,8 +23,12 @@ import org.junit.Test;
  *              * Collection接口：用于存储一个一个的数据，也称为单列数据集合。
  *                  - List子接口：用来存储有序的、可以重复的数据（主要用来替换数组），相当于长度可变的“动态数组”。
  *                      -- 实现类：ArrayList（主要实现类）、LinkedList、Vector
+ *
  *                  - Set子接口：用来存储无序的，不可重复的数据（类似于数学中的集合）
  *                      -- 实现类：HashSet（主要实现类）、LinkedHashSet、TreeSet
+ *
+ *                  - Queue/Deque子接口：java提供的标准队列结构的实现，支持先入先出（First-in-First-out）。
+ *                      -- 实现类：LinkedBlockingQueue（主要实现类）、LinkedList（既是链表，又是队列）、PriorityQueue
  *
  *              * Map接口：用于存储具有"key-value"映射关系的键值对的集合，即一对一对的数据，也称双列数据集合。
  *                  -- 实现类：HashMap（主要实现类）、HashTable、LinkedHashMap、TreeMap、Properties。
