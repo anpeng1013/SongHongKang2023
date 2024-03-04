@@ -11,7 +11,7 @@ import java.util.List;
  *      特点：
  *          * 鉴于Java中用数组存储数据的局限性，我们通常使用 java.util.List 替代数组。
  *          * List 集合类中元素有序、且可重复，集合中的每个元素都有其对应的顺序索引index。
- *          * JDK API 中 List 接口的实现类常用的有： ArrayList、 LinkedList 和 Vector。
+ *          * JDK API 中 List 接口的实现类常用的有： ArrayList、LinkedList、Vector 和 Stack。
  *          * 在JavaSE中List名称的类型有两个，一个是java.util.List集合接口，一个是java.awt.List图形界面的组件，别导错包了。
  *      方法：
  *          增：
@@ -30,7 +30,7 @@ import java.util.List;
  *
  * List接口主要实现类：ArrayList：
  *      * ArrayList 是 List 接口的主要实现类。
- *      * 本质上， ArrayList 是对象引用的一个”变长”数组。
+ *      * 本质上，ArrayList 是对象引用的一个”变长”数组。
  *      * Arrays.asList(...)方法返回的 List 集合，既不是ArrayList实例，也不是Vector实例。返回值是一个固定长度的List集合
  *
  * List接口主要实现类：LinkedList
@@ -46,6 +46,18 @@ import java.util.List;
  * List的主要实现类：Vector
  *      * Vector是一个古老的集合， JDK1.0就有了。大多数操作与ArrayList相同，区别之处在于Vector是线程安全的。
  *      * 在各种 List 中，最好把ArrayList作为默认选择。当插入、删除频繁时，使用LinkedList； Vector总是比ArrayList慢，所以尽量避免使用。
+ *
+ * ArrayList vs Vector（动态数组，底层物理结构都是数组）
+ *      * ArrayList是新版的动态数组，线程不安全，但效率很高；Vector是旧版的动态数组，线程安全，但效率低。
+ *      * 两者的扩容机制不同，ArrayList默认扩容为原来的 1.5 倍；Vector默认扩容增加为原来的 2 倍。
+ *      * 数组的初始化容量，如果在构建ArrayList与Vector的集合对象时，没有显式指定初始化容量，那么Vector的内部数组的初始容量默认为10，而ArrayList
+ *          在JDK6.0及之前的版本也是10，JDK8.0之后的版本ArrayList初始化为长度为0的空数组，之后在添加第一个元素时，再创建长度为10的数组。
+ *
+ * 链表 vs 动态数组
+ *      * 动态数组底层的物理结构是数组，因此根据索引访问的效率非常高。但是非末尾位置的插入和删除效率不高，因为涉及到移动元素。
+ *          另外添加操作时涉及到扩容问题，就会增加时空消耗。
+ *      * 链表底层的物理结构是链表，因此根据索引访问的效率不高，即查找元素慢。但是插入和删除不需要移动元素，只需要修改前后元素的指向关系即可，
+ *          所以插入、删除元素快。而且链表的添加不会涉及到扩容问题。
  *
  * @ClassName: D_ListTest.java
  * @Author: anpeng
