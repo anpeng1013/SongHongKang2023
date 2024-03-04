@@ -11,11 +11,15 @@ import java.util.TreeSet;
 
 /**
  * Collection的子接口：Set
- *      概述：
+ *      特性：
  *          - Set接口是Collection的子接口，元素的添加位置具有无序性，Set接口相较于Collection接口没有提供额外的方法。
  *          - Set集合不允许包含相同的元素，如果试把两个相同的元素加入同一个Set集合中，会导致添加操作失败。
  *          - Set集合支持的遍历方式和Collection集合一样：foreach和Iterator。
  *          - Set的常用实现类有： HashSet、 TreeSet、 LinkedHashSet。
+ *
+ * Set 和 Map 的关系
+ *      - Set的内部其实就是一个Map。Set中的元素存储在Map的key中
+ *      - 即HashSet的内部实现是一个HashMap，TreeSet的内部实现是一个TreeMap，LinkedHashSet的内部实现是一个LinkedHashMap。
  *
  * Set的主要实现类：HashSet
  *      概述：
