@@ -30,7 +30,7 @@ import java.util.List;
  *
  * List接口主要实现类：ArrayList：
  *      * ArrayList 是 List 接口的主要实现类。
- *      * 本质上，ArrayList 是对象引用的一个”变长”数组。
+ *      * 本质上，ArrayList 是对数组的常规操作（增删改查、扩容）的封装。
  *      * Arrays.asList(...)方法返回的 List 集合，既不是ArrayList实例，也不是Vector实例。返回值是一个固定长度的List集合
  *
  * List接口主要实现类：LinkedList

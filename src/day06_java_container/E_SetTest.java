@@ -17,8 +17,8 @@ import java.util.TreeSet;
  *          - Set集合支持的遍历方式和Collection集合一样：foreach和Iterator。
  *          - Set的常用实现类有： HashSet、 TreeSet、 LinkedHashSet。
  *
- * Set 和 Map 的关系
- *      - Set的内部其实就是一个Map。Set中的元素存储在Map的key中
+ * Set 和 Map 的关系：（可见源码）
+ *      - Set的内部其实就是一个Map。Set中的元素存储在Map的key中。
  *      - 即HashSet的内部实现是一个HashMap，TreeSet的内部实现是一个TreeMap，LinkedHashSet的内部实现是一个LinkedHashMap。
  *
  * Set的主要实现类：HashSet
