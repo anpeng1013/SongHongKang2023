@@ -78,7 +78,7 @@ public class P_Wrapper {
         //Long l = new Long("abc"); //NumberFormatException
         //Integer obj2 = Integer.valueOf(4);//使用包装类中的valueOf方法
 
-        //装箱：把包装对象拆为转为基本数据类型，一般是因为需要运算，Java中的大多数运算符是为基本数据类型设计的。比较、算术等。
+        //拆箱：把包装对象拆为转为基本数据类型，一般是因为需要运算，Java中的大多数运算符是为基本数据类型设计的。比较、算术等。
         //int num1 = obj1.intValue();//使用包装类的intValue方法，已过时。
 
         //自动装箱与拆箱，从JDK1.5开始，基本类型与包装类的装箱、拆箱动作可以自动完成。
