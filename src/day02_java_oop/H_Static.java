@@ -39,13 +39,14 @@ import java_bean.day02.Son;
  * @Author: anpeng
  * @Date: 2023/10/31 21:05
  */
+@SuppressWarnings("all")
 public class H_Static {
     public static void main(String[] args) {
         Father.method();
         Son.method();//子类继承静态方法。
 
         Father father = new Son();
-        Father.func();//执行的是编译时类型Father中的func
+        father.func();//执行的是编译时类型Father中的func
         System.out.println(father);//运行时类型还是Son--java_bean.day03.Son@41629346
 
     }
