@@ -149,7 +149,7 @@ import org.junit.Test;
  *                      如果线程A获取到锁，线程A进入到Runnable状态，那么线程B就进入到Blocked锁阻塞状态。
  *          * TIMED_WAITING(计时等待)：一个正在限时等待的线程处于这一状态。当前线程执行过程中遇到Thread类的sleep或join，Object类的wait，
  *                      LockSupport类的park方法，并且在调用这些方法时，设置了时间，那么当前线程会进入TIMED_WAITING，直到时间到，或被中断。
- *          * WAITING(无限等待)：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。当前线程执行过程中遇到遇到Object类
+ *          * WAITING(无限等待)：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。当前线程执行过程中遇到Object类
  *                      的wait，Thread类的join，LockSupport类的park方法，并且在调用这些方法时，没有指定时间，那么当前线程会进入WAITING状态，
  *                      直到被唤醒。
  *                      - 通过Object类的wait进入WAITING状态的要有Object的notify/notifyAll唤醒；
