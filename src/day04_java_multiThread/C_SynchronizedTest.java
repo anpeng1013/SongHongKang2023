@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * 线程安全
  *      当我们使用多个线程访问同一资源（可以是同一个变量、同一个文件、同一条记录等）的时候，若多个线程只有读操作，那么不会发生线程安全问题。
- *      但是如果多个线程中对资源有读和写的操作，就容易出现线程安全问题。
+ *      但是如果多个线程中对资源同时有读和写的操作，就容易出现线程安全问题。
  *      1、局部变量不能共享：局部变量在每次调用方法时都是独立的，那么每个线程的run()的局部变量是独立的，不是共享数据。
  *      2、不同对象的实例变量不共享：不同的实例对象的实例变量是独立的。
  *      3、静态变量是共享的，类的静态变量被类的所有实例所共享。
@@ -54,7 +54,7 @@ import org.junit.Test;
  *      不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁。
  *      诱发死锁的原因：
  *          * 互斥访问
- *          * 忙着等待
+ *          * 忙则等待
  *          * 不可抢占
  *          * 循环等待
  *      以上4个条件同时出现就会触发死锁。
@@ -289,11 +289,13 @@ public class C_SynchronizedTest {
     @SuppressWarnings("all")
     public void testMultiThreadLazy(){
         Thread t1 = new Thread(){
+            @Override
             public void run(){
                 s1 = LazyOne.getInstance();
             }
         };
         Thread t2 = new Thread(){
+            @Override
             public void run(){
                 s2 = LazyOne.getInstance();
             }
@@ -309,7 +311,7 @@ public class C_SynchronizedTest {
         }
         System.out.println(s1);
         System.out.println(s2);
-        System.out.println(s1 == s2);//false，懒汉式在多线程下存在线程安全问题。
+        System.out.println(s1 == s2);//false，懒汉式在多线程下存在线程安全问题。（多运行几次，就会出现false）
     }
 
     //12、利用同步锁机制解决多线程下懒汉式存在的线程安全问题
@@ -317,13 +319,15 @@ public class C_SynchronizedTest {
     @SuppressWarnings("all")
     public void testMultiThreadLazy1(){
         Thread t1 = new Thread(){
+            @Override
             public void run(){
                 s1 = LazyOne.getInstance1();
             }
         };
         Thread t2 = new Thread(){
+            @Override
             public void run(){
-                s2 = LazyOne.getInstance1();
+                s2 = LazyOne.getInstance2();
             }
         };
         t1.start();
