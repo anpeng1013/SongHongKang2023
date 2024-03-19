@@ -29,7 +29,7 @@ import java.util.TreeSet;
  *              -- 不能保证元素的排列顺序。
  *              -- HashSet不是线程安全的。
  *              -- 集合元素可以是null。
- *              -- 存储的元素必须重写hashCode和equals方法。
+ *              -- 存储的元素必须重写hashCode和equals方法。（否则可能在集合中添加内容相同的元素）
  *          - HashSet集合判断两个元素相等的标准：两个对象通过hashCode()方法得到的哈希值相等，且两个对象的equals()方法返回值为true。
  *          - 对于存在Set容器中的对象，对应的类一定要重写hashCode()和equals(Object obj)方法，以实现对象相等规则。即：相等的对象必须有相同的散列码。
  *
