@@ -20,8 +20,8 @@ import java.util.*;
  *      - 即HashSet的内部实现是一个HashMap，TreeSet的内部实现是一个TreeMap，LinkedHashSet的内部实现是一个LinkedHashMap。
  *
  * Map中的key-value特点:
- *      - Map中的key用Set来存放，不允许重复，即同一个key对象所对应的类，须重写hashCode和equals方法。
- *      - Map中的value用Collection来存放，允许重复。
+ *      - Map中的key不允许重复，即同一个key类，须重写hashCode和equals方法。
+ *      - Map中的value允许重复。
  *      - key和value之间存在单向一对一关系，即通过指定的key总能找到唯一确定的value，不同key对应的value可以重复。value所在的类要重写equals()方法。
  *      - key和value构成一个Entry（条目，实体）。所有的Entry彼此之间是无序的、不可重复的。
  *
@@ -64,7 +64,7 @@ import java.util.*;
  *              2、jdk8中添加的key,value封装到了HashMap.Node类的对象中。而非jdk7中的HashMap.Entry。
  *              3、jdk8 中新增的元素所在的索引位置如果有其他元素。在经过一系列判断后，如果能添加，则是旧的元素指向新的元素。
  *                  而非jdk7中的新的元素指向旧的元素。 “七上八下”
- *              4、jdk7底层的数据结构是：数组+单向链表。 而jdk8底层的数据结构是：数组+单向链表+红黑树。
+ *              4、jdk7底层的数据结构是：数组+单向链表。 而jdk8底层的数据结构是：数组+单向链表/红黑树。
  *              5、红黑树出现的时机：当某个索引位置 i 上的链表的长度达到 8，且数组的长度超过 64 时，此索引位置上的元素要从单向链表改为红黑树。
  *                  如果索引 i 位置是红黑树的结构，当不断删除元素的情况下，当前索引 i 位置上的元素的个数低于 6 时，要从红黑树改为单向链表。
  *
@@ -76,7 +76,7 @@ import java.util.*;
  *          2、Entry中的has属性为什么不直接使用key的hashCode()返回值呢？
  *              答：不管是JDK7还是JDK8中，都不是直接用key的hashCode值直接与table.length-1计算求下标的，而是先对key的hashCode值
  *              进行了一个运算，JDK7和DK8关于hash()的实现代码不一样，但是不管怎么样都是为了提高hash code值与(table.length-1)的按位与的结果，
- *              尽量的均匀分布。虽然算法不同，但是思路都是将hashCode值的高位二进制与低位二进制值进行了异或，然高位二进制参与到index的计算中。
+ *              尽量的均匀分布。虽然算法不同，但是思路都是将hashCode值的高位二进制与低位二进制值进行了异或，让高位二进制参与到index的计算中。
  *              因为HashMap的table数组一般不会特别大，至少在不断扩容之前，那么table.length-1 的大部分高位都是0，直接用hashCode和table.length-1
  *              进行&运算的话，就会导致总是只有最低的几位是有效的，那么就算你的hashCode()实现的再好也难以避免发生碰撞，这时让高位参与进来的意义就
  *              体现出来了。它对hashcode的低位添加了随机性并且混合了高位的部分特征，显著减少了碰撞冲突的发生。
@@ -100,7 +100,7 @@ import java.util.*;
  *          8、什么时候树化？什么时候反树化？
  *              答：树化阈值：8，反树化阈值：6，最小树化容量：64。
  *              ① 当table[index]下的链表的节点个数达到8，并且table.length>=64时，如果新的Entry对象还添加到该table[index]下的链表中，
- *              那么就会将table[index]下的链表进行树化（转化成红黑树）。
+ *                  那么就会将table[index]下的链表进行树化（转化成红黑树）。
  *              ② 当某个table[index]下的红黑树节点个数小于6时：
  *                  - 当继续删除table[index]下的树结点，最后这个根结点的左右结点有null，或根结点的左结点的左结点为null，会反树化。
  *                  - 当重新添加新的映射关系到map中，导致map重新扩容，这个时候如果table[index]下面还是小于等于 6 的个数，那么会反树化。
