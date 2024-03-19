@@ -1,5 +1,7 @@
 package day08_java_dataStructure;
 
+import org.junit.Test;
+
 /**
  * 专有名词解释：
  *      - 节点：树中的数据元素都称之为节点。
@@ -59,4 +61,9 @@ package day08_java_dataStructure;
  */
 @SuppressWarnings("all")
 public class F_TreeTest {
+    @Test
+    public void test01(){
+        System.out.println("this is Tree summary");
+    }
+
 }
