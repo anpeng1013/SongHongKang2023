@@ -53,7 +53,7 @@ public class G_CollectionsTest {
     public void testAddAll() {
         /*
         public static <T> boolean addAll(Collection<? super T> c, T... elements)
-        将所有指定元素添加到指定的collection中。Collection集合的元素类型必须 >= T类型。
+        将所有指定元素添加到指定的collection中。Collection集合中的元素类型必须 >= T类型。
          */
         Collection<Object> coll = new ArrayList<>();
         Collections.addAll(coll, "java", "python", "C++");
