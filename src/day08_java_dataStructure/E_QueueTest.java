@@ -34,7 +34,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  *      - 环形队列：队尾指针不能超过队头指针。
  *      - 双向队列：队列的两端都可以进行压入和弹出操作。
  *      - 阻塞队列：向已满的队列中插入元素时会阻塞，向空队列中取元素时也会阻塞；阻塞队列被设计主要用于生产者-消费者队列。
- *      - 优先队列：队列的元素按自然顺序排序，或者根据提供的Comparator进行排序。也就是说，优先级队列种的元素都是经过排序的。
+ *      - 优先队列：队列的元素按自然顺序排序，或者根据提供的Comparator进行排序。也就是说，优先级队列中的元素都是经过排序的。
  *      - 延时队列：延时队列中的元素都有一个有效期，只有当过了有效期才可以使用该元素。
  *
  *
@@ -49,6 +49,10 @@ public class E_QueueTest {
         Queue<String> queue = new LinkedList<>();
         BlockingQueue blockingQueue = new LinkedBlockingQueue();
         PriorityQueue priorityQueue = new PriorityQueue();
+        priorityQueue.offer(3);
+        priorityQueue.offer(1);
+        priorityQueue.offer(5);
+        System.out.println("priorityQueue = " + priorityQueue);//priorityQueue = [1, 3, 5],优先级队列中的元素都是经过排序的。
     }
 
 }
