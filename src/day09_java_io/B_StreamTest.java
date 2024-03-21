@@ -62,10 +62,10 @@ import org.junit.Test;
  * @Date: 2024/3/19 16:43
  */
 @SuppressWarnings("all")
-public class B_IOSummaryTest {
+public class B_StreamTest {
     @Test
     public void testSummary(){
-        System.out.println("this is IO summary.");
+        System.out.println("this is Stream summary.");
     }
 
 }

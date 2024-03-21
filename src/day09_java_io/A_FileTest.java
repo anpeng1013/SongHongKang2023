@@ -19,7 +19,9 @@ import java.time.ZoneId;
  * 2、构造器：
  *      - public File(String pathname)：以 pathname 为路径创建 File 对象，可以是绝对路径或者相对路径。如果 pathname 是相对路径，则默认的
  *          当前路径在系统属性 user.dir（见day05_java_library/E_SystemTest.java）中存储。
+ *
  *      - public File(String parent, String child) ：以 parent 为父路径， child 为子路径创建 File 对象。
+ *
  *      - public File(File parent, String child) ：根据一个父 File 对象和子文件路径创建 File 对象。
  *          -- 绝对路径：从盘符开始的路径，这是一个完整的路径。
  *          -- 相对路径：相对于项目目录的路径，这是一个便捷的路径，开发中经常使用。
@@ -47,6 +49,7 @@ import java.time.ZoneId;
  *          -- public long lastModified() ：获取最后一次的修改时间，毫秒值。
  *          -- public String[] list() ：返回一个 String 数组，表示该 File 目录中的所有子文件或目录。
  *          -- public File[] listFiles() ：返回一个 File 数组，表示该 File 目录中的所有的子文件或目录。
+ *
  *      - 判断功能的方法：
  *          -- public boolean exists() ：此 File 表示的文件或目录是否实际存在。
  *          -- public boolean isDirectory() ：此 File 表示的是否为目录。
@@ -54,15 +57,13 @@ import java.time.ZoneId;
  *          -- public boolean canRead() ：判断是否可读
  *          -- public boolean canWrite() ：判断是否可写
  *          -- public boolean isHidden() ：判断是否隐藏
+ *
  *      - 创建、删除功能的方法：
  *          -- public boolean createNewFile() ：创建文件。若文件存在，则不创建，返回false。
  *          -- public boolean mkdir() ：创建文件目录。如果此文件目录存在，就不创建了。如果此文件目录的上层目录不存在，也不创建。
  *          -- public boolean mkdirs() ：创建文件目录。如果上层文件目录不存在，一并创建。
  *          -- public boolean delete() ：删除文件或者文件夹。
  *              删除注意事项： ① Java中的删除不走回收站。 ② 要删除一个文件目录，请注意该文件目录内不能包含文件或者文件目录。
- *
- *
- *
  *
  * @ClassName: A_FileTest.java
  * @Author: anpeng
