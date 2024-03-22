@@ -113,7 +113,7 @@ public class D_ByteStreamTest {
     public void testFileOutputStream02(){
         //实现方式2 -- 从尾部添加，原有内容不变。
         try (FileOutputStream output = new FileOutputStream(new File("file/byte.txt"),true)){
-            output.write("\nthis is appended".getBytes(StandardCharsets.UTF_8),0, 17);
+            output.write("\nthis is appended安鹏爱胡莉".getBytes(StandardCharsets.UTF_8));//这种方式可以代替转换流。
         }catch (IOException exception){
             exception.printStackTrace();
         }

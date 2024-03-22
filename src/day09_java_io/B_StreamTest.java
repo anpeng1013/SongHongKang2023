@@ -46,7 +46,7 @@ import org.junit.Test;
  *          过滤流        FilterInputStream      FilterOutputStream       FilterReader           FilterWriter
  *          打印流                               PrintStream                                     PrintWriter
  *          推回输入流     PushbackInputStream                             PushbackReader
- *          特殊流        DataInputStream        DataOutputStream
+ *          数据流        DataInputStream        DataOutputStream
  *
  *      - 常用的节点流：
  *          -- 文件流：FileInputStream、 FileOutputStream、 FileReader、 FileWriter（数据源为硬盘中的文件）
