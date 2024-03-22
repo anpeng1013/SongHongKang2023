@@ -120,7 +120,7 @@ public class C_CharStreamTest {
      @Test
      public void testFileWriter01() {
          //实现方式1 -- 从头开始写，新建文件替换旧的文件。
-         try(FileWriter writer = new FileWriter("file/anpeng.txt")){
+         try(FileWriter writer = new FileWriter("file/char.txt")){
              char[] chars = "安鹏爱胡莉".toCharArray();
              writer.write(chars);
          }catch (IOException exception){
@@ -131,7 +131,7 @@ public class C_CharStreamTest {
      @Test
      public void testFileWriter02() {
          //实现方式2 -- 从尾部添加，原有内容不变。
-         try (FileWriter writer = new FileWriter(new File("file/anpeng.txt"), true)){
+         try (FileWriter writer = new FileWriter(new File("file/char.txt"), true)){
              writer.write("\nanpeng love huli");
          }catch (IOException exception){
              exception.printStackTrace();
@@ -140,7 +140,7 @@ public class C_CharStreamTest {
 
      @Test
      public void testFileWriter03() throws IOException {
-         FileWriter writer = new FileWriter(new File("file/anpeng.txt"), true);
+         FileWriter writer = new FileWriter(new File("file/char.txt"), true);
          //写出数据，通过flush
          writer.write('\n');
          writer.write("刷新\n");

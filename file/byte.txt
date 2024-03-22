@@ -1,0 +1,4 @@
+abc
+this is FileOutputStream
+this is appended
+this is appended

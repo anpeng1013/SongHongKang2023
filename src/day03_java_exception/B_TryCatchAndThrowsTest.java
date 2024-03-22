@@ -223,7 +223,7 @@ public class B_TryCatchAndThrowsTest {
     public void test06(){
         FileInputStream fis = null;
         try{
-            File file = new File("anpeng.txt");
+            File file = new File("char.txt");
             fis = new FileInputStream(file);//FileNotFoundException
             int b = fis.read();//IOException
             while(b != -1){

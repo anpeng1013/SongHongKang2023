@@ -87,7 +87,7 @@ public class A_FileTest {
         System.out.println("文件名称：" + file.getName());
         System.out.println("文件大小：" + file.length());
         System.out.println("文件最后修改时间：" + LocalDateTime.ofInstant(Instant.ofEpochMilli(file.lastModified()), ZoneId.of("Asia/Shanghai")));
-        file = new File("file/anpeng.txt");
+        file = new File("file/char.txt");
         file.renameTo(new File("file/love.txt"));
 
         File dir = new File("file");
@@ -109,7 +109,7 @@ public class A_FileTest {
 
     @Test
     public void testCreateDelete() throws IOException, InterruptedException {
-        File file = new File("file/anpeng.txt");
+        File file = new File("file/char.txt");
         if(!file.exists()) file.createNewFile();
 
         File dir = new File("file/dir");

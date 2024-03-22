@@ -143,7 +143,7 @@ public class A_ExceptionTest {
 
     @Test
     public void test11(){//java.io.FileNotFoundException 文件未找到异常
-        //FileInputStream fis = new FileInputStream("anpeng.txt");
+        //FileInputStream fis = new FileInputStream("char.txt");
     }
 
 }
