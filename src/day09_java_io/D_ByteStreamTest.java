@@ -2,7 +2,6 @@ package day09_java_io;
 
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -41,6 +40,7 @@ import java.nio.charset.StandardCharsets;
  *          -- public FileOutputStream(File file)：创建文件输出流，写出由指定的 File 对象表示的文件。
  *          -- public FileOutputStream(String name)： 创建文件输出流，指定的名称为写出文件。
  *          -- public FileOutputStream(File file, boolean append)： 创建文件输出流，指明是否在现有文件末尾追加内容。
+ *          -- public FileOutputStream(String name, boolean append)： 创建文件输出流，指明是否在现有文件末尾追加内容。
  *
  *
  * @ClassName: D_ByteStreamTest.java
@@ -112,7 +112,7 @@ public class D_ByteStreamTest {
     @Test
     public void testFileOutputStream02(){
         //实现方式2 -- 从尾部添加，原有内容不变。
-        try (FileOutputStream output = new FileOutputStream(new File("file/byte.txt"),true)){
+        try (FileOutputStream output = new FileOutputStream("file/byte.txt",true)){
             output.write("\nthis is appended安鹏爱胡莉".getBytes(StandardCharsets.UTF_8));//这种方式可以代替转换流。
         }catch (IOException exception){
             exception.printStackTrace();

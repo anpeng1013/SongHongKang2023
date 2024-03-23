@@ -44,6 +44,7 @@ import java.io.IOException;
  *          -- FileWriter(File file)： 创建一个新的 FileWriter，给定要读取的 File 对象。
  *          -- FileWriter(String fileName)： 创建一个新的 FileWriter，给定要读取的文件的名称。
  *          -- FileWriter(File file, boolean append)： 创建一个新的 FileWriter，指明是否在现有文件末尾追加内容。
+ *          -- FileWriter(String fileName, boolean append)： 创建一个新的 FileWriter，指明是否在现有文件末尾追加内容。
  *
  *      - 总结
  *          -- 因为出现流资源的调用，为了避免内存泄漏，需要使用 try-catch-finally 处理异常。

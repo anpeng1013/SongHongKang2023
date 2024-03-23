@@ -1,6 +1,5 @@
 package java_bean.day09;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -24,8 +23,8 @@ public class Logger {
      */
     public static void log(String message){
         try {
-            //指向一个日志文件，尾部添加时用文件对象创建流，自动刷新
-            PrintStream out = new PrintStream(new FileOutputStream(new File("file/log.txt"), true), true);
+            //指向一个日志文件，尾部添加，自动刷新
+            PrintStream out = new PrintStream(new FileOutputStream("file/log.txt", true), true);
             System.setOut(out);//改变输出方向
             Date nowTime = new Date();//获取当时时间
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");

@@ -4,6 +4,7 @@ import java_bean.day09.Logger;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * 1、标准输入、输出流（字节流）
@@ -41,6 +42,16 @@ import java.io.*;
  *          -- PrintStream(String fileName)：创建具有指定文件名称且不带自动行刷新的新打印流。
  *          -- PrintStream(String fileName, String csn) ：创建具有指定文件名称和字符集且不带自动行刷新的新打印流。
  *
+ * 3、扫描流：Scanner类
+ *      - 构造方法：
+ *          -- Scanner(File source) ：构造一个新的 Scanner，它生成的值是从指定文件扫描的。
+ *          -- Scanner(File source, String charsetName) ：构造一个新的 Scanner，它生成的值是从指定文件扫描的，并指定字符编码。
+ *          -- Scanner(InputStream source) ：构造一个新的 Scanner，它生成的值是从指定的输入流扫描的。
+ *          -- Scanner(InputStream source, String charsetName) ：构造一个新的 Scanner，它生成的值是从指定的输入流扫描的，并指定字符编码。
+ *
+ *      - 常用方法：
+ *          -- boolean hasNextXxx()：如果通过使用 nextXxx()方法，此扫描器输入信息中的下一个标记可以解释为默认基数中的一个 Xxx 值，则返回 true。
+ *          -- Xxx nextXxx()：将输入信息的下一个标记扫描为一个 Xxx。
  *
  * @ClassName: H_OtherStreamTest.java
  * @Author: anpeng
@@ -87,6 +98,15 @@ public class H_StandardIOStreamTest {
         Logger.log("调用了System类的gc方法，建议启动垃圾回收");
         Logger.log("调用了TeamView的addMember()方法");
         Logger.log("用户尝试进行登录，验证失败");
+    }
+
+    @Test
+    public void testScanner() throws FileNotFoundException {
+        Scanner input = new Scanner(new FileInputStream("file/log.txt"));
+        while (input.hasNextLine()){
+            System.out.println(input.nextLine());
+        }
+        input.close();
     }
 
 }
