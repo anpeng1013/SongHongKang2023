@@ -43,8 +43,8 @@ import java.net.UnknownHostException;
  *
  *      - Socket类（TCP客户端）
  *          -- 构造器：
- *              > public Socket(InetAddress address, int port)：创建一个流套接字并将其连接到指定 IP 地址的指定端口号。
- *              > public Socket(String host,int port)：创建一个流套接字并将其连接到指定主机上的指定端口号。
+ *              > public Socket(InetAddress address, int port)：创建一个流套接字，并将其连接到服务器的IP地址的指定端口号。
+ *              > public Socket(String host,int port)：创建一个流套接字，并将其连接到指定服务器的指定端口号。
  *          -- 常用方法：
  *              > public InputStream getInputStream()：返回此套接字的输入流，可以用于接收消息
  *              > public OutputStream getOutputStream()：返回此套接字的输出流，可以用于发送消息
