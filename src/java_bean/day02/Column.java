@@ -11,6 +11,6 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
-    String columnName();
+    String columnName();//注解的成员以无参数有返回值的抽象方法的形式来声明
     String columnType();
 }

@@ -21,7 +21,7 @@ public class Animal {
     }
 
     //构造函数
-    Animal(){
+    public Animal(){
         super();//不写也行，默认就有。Animal继承于Object，但是Object随着JVM的启动就加载了。
         //super()执行完后-->显式初始化-->构造代码块初始化
         num = 2;
